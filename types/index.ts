@@ -25,17 +25,40 @@ export interface Solution {
   icon: LucideIcon;
 }
 
+export interface ExperienceArea {
+  title: string;
+  description: string;
+  items: string[];
+  icon: LucideIcon;
+  image: string;
+  imageAlt: string;
+}
+
+export interface TrustIndicator {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+export interface GlobalReachLevel {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
 export interface QuoteFormData {
   fullName: string;
+  company: string;
   phone: string;
   email: string;
-  locality: string;
-  zone: string;
-  clientType: string;
-  service: string;
+  country: string;
+  province: string;
+  city: string;
+  projectType: string;
   message: string;
   hasStarlink: string;
   hasEquipment: string;
 }
 
 export type QuoteFormErrors = Partial<Record<keyof QuoteFormData, string>>;
+

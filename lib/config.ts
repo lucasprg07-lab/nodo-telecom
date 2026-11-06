@@ -5,7 +5,8 @@ export const siteConfig = {
   location: "Salta, Argentina",
 
   // URL pública del sitio. Se resuelve desde variables de entorno.
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://nodotele.com",
+  domain: "https://nodotele.com",
 
   // ---------------------------------------------------------------
   // Datos de contacto — PLACEHOLDERS: reemplazar por los datos reales.

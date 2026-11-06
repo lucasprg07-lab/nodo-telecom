@@ -9,7 +9,8 @@ const baseStyles =
   "inline-flex items-center justify-center gap-2 rounded-lg font-semibold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-60";
 
 const variantStyles: Record<Variant, string> = {
-  primary: "bg-electric-500 text-navy-950 hover:bg-electric-400",
+  primary:
+    "bg-electric-500 text-navy-950 shadow-lg shadow-electric-500/20 hover:bg-electric-400 hover:shadow-electric-500/30",
   secondary: "bg-navy-800 text-white hover:bg-navy-700",
   outline: "border border-white/30 text-white hover:bg-white/10",
   ghost: "text-navy-700 hover:bg-navy-50",

@@ -13,8 +13,12 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden bg-navy-950">
       <div className="absolute inset-0" aria-hidden="true">
-        <div className="absolute -top-24 right-0 h-96 w-96 rounded-full bg-electric-500/10 blur-3xl" />
-        <div className="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-electric-600/10 blur-3xl" />
+        <div className="absolute inset-0 animate-gradient bg-gradient-to-br from-navy-950 via-navy-900 to-electric-900/40" />
+        <div className="absolute -top-24 right-0 h-96 w-96 animate-float rounded-full bg-electric-500/10 blur-3xl" />
+        <div
+          className="absolute bottom-0 left-0 h-80 w-80 animate-float rounded-full bg-electric-600/10 blur-3xl"
+          style={{ animationDelay: "1.5s" }}
+        />
       </div>
 
       <Container className="relative grid gap-12 py-16 sm:py-20 lg:grid-cols-2 lg:items-center lg:py-24">

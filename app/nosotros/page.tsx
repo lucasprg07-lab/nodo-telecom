@@ -5,6 +5,7 @@ import { LOCALITIES } from "@/lib/data";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { CallToAction } from "@/components/home/CallToAction";
+import { ExperienceAreas } from "@/components/home/ExperienceAreas";
 
 export const metadata: Metadata = {
   title: "Nosotros",
@@ -80,6 +81,35 @@ export default function NosotrosPage() {
         </Container>
       </section>
 
+      <section className="py-16 sm:py-20">
+        <Container className="max-w-3xl">
+          <SectionHeading
+            align="left"
+            eyebrow="Trayectoria"
+            title="Experiencia que conecta. Soluciones que responden."
+          />
+          <div className="mt-6 space-y-4 text-slate-600">
+            <p className="text-lg leading-relaxed">
+              Detrás de NODO Telecom hay profesionales con más de cinco años de
+              experiencia en el sector de las telecomunicaciones, participando
+              en proyectos de conectividad e infraestructura tecnológica para
+              entornos empresariales, industriales y mineros.
+            </p>
+            <p className="leading-relaxed">
+              Nuestra trayectoria incluye trabajos de análisis, planificación
+              técnica, documentación de proyectos, infraestructura de redes,
+              sistemas de energía para telecomunicaciones y soluciones
+              desarrolladas para entornos operativos exigentes.
+            </p>
+            <p className="leading-relaxed">
+              Esta experiencia nos permite abordar cada proyecto con una visión
+              integral: desde el relevamiento y el diseño de la solución hasta
+              su implementación, configuración y puesta en servicio.
+            </p>
+          </div>
+        </Container>
+      </section>
+
       <section className="bg-slate-50 py-16 sm:py-20">
         <Container className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
@@ -119,6 +149,7 @@ export default function NosotrosPage() {
         </Container>
       </section>
 
+      <ExperienceAreas />
       <CallToAction />
     </>
   );

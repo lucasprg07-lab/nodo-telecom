@@ -209,22 +209,18 @@ export const LOCALITIES: string[] = [
   "Otra localidad",
 ];
 
-export const CLIENT_TYPES: { value: string; label: string }[] = [
-  { value: "residencial", label: "Residencial" },
-  { value: "comercial", label: "Comercial" },
-  { value: "rural", label: "Rural" },
-  { value: "empresarial", label: "Empresarial" },
-];
-
-export const SERVICE_OPTIONS: { value: string; label: string }[] = [
-  { value: "Internet satelital Starlink", label: "Internet satelital Starlink" },
-  { value: "Redes y conectividad", label: "Redes y conectividad" },
+export const PROJECT_TYPES: { value: string; label: string }[] = [
+  { value: "Instalación Starlink", label: "Instalación Starlink" },
+  { value: "Conectividad residencial", label: "Conectividad residencial" },
+  { value: "Conectividad comercial", label: "Conectividad comercial" },
+  { value: "Conectividad industrial", label: "Conectividad industrial" },
+  { value: "Redes LAN / Wi-Fi", label: "Redes LAN / Wi-Fi" },
   { value: "Infraestructura tecnológica", label: "Infraestructura tecnológica" },
   {
-    value: "Soluciones para empresas y establecimientos rurales",
-    label: "Soluciones para empresas y rurales",
+    value: "Proyecto en ubicación remota",
+    label: "Proyecto en ubicación remota",
   },
-  { value: "Otra consulta", label: "Otra consulta" },
+  { value: "Otro", label: "Otro" },
 ];
 
 export const STARLINK_OPTIONS: { value: string; label: string }[] = [

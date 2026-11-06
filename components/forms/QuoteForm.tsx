@@ -6,24 +6,19 @@ import { CheckCircle2 } from "lucide-react";
 import type { QuoteFormData, QuoteFormErrors } from "@/types";
 import { validateQuoteForm } from "@/lib/validation";
 import { buildWhatsAppLink } from "@/lib/utils";
-import {
-  CLIENT_TYPES,
-  EQUIPMENT_OPTIONS,
-  LOCALITIES,
-  SERVICE_OPTIONS,
-  STARLINK_OPTIONS,
-} from "@/lib/data";
+import { EQUIPMENT_OPTIONS, PROJECT_TYPES, STARLINK_OPTIONS } from "@/lib/data";
 import { Button } from "@/components/ui/Button";
 import { WhatsAppIcon } from "@/components/ui/icons";
 
 const initialData: QuoteFormData = {
   fullName: "",
+  company: "",
   phone: "",
   email: "",
-  locality: "",
-  zone: "",
-  clientType: "",
-  service: "",
+  country: "Argentina",
+  province: "",
+  city: "",
+  projectType: "",
   message: "",
   hasStarlink: "",
   hasEquipment: "",
@@ -32,26 +27,23 @@ const initialData: QuoteFormData = {
 const inputClass =
   "block w-full rounded-lg border border-navy-200 bg-white px-3.5 py-2.5 text-sm text-navy-900 placeholder-slate-400 shadow-sm transition focus:border-electric-500 focus:outline-none focus:ring-2 focus:ring-electric-500/30";
 
-function clientLabel(value: string): string {
-  return CLIENT_TYPES.find((c) => c.value === value)?.label ?? value;
-}
-
 function buildMessage(data: QuoteFormData): string {
   const lines = [
     "Hola, NODO Telecom. Quisiera solicitar un presupuesto.",
     "",
     `*Nombre y apellido:* ${data.fullName.trim()}`,
-    `*Teléfono / WhatsApp:* ${data.phone.trim()}`,
   ];
+  if (data.company.trim()) {
+    lines.push(`*Empresa:* ${data.company.trim()}`);
+  }
+  lines.push(`*Teléfono / WhatsApp:* ${data.phone.trim()}`);
   if (data.email.trim()) {
     lines.push(`*Correo electrónico:* ${data.email.trim()}`);
   }
-  lines.push(`*Localidad:* ${data.locality}`);
-  if (data.zone.trim()) {
-    lines.push(`*Barrio / zona:* ${data.zone.trim()}`);
-  }
-  lines.push(`*Tipo de cliente:* ${clientLabel(data.clientType)}`);
-  lines.push(`*Servicio solicitado:* ${data.service}`);
+  lines.push(`*País:* ${data.country.trim()}`);
+  lines.push(`*Provincia / región:* ${data.province.trim()}`);
+  lines.push(`*Ciudad / localidad:* ${data.city.trim()}`);
+  lines.push(`*Tipo de proyecto:* ${data.projectType}`);
   lines.push(`*¿Ya cuenta con Starlink?:* ${data.hasStarlink}`);
   lines.push(`*¿Tiene equipo Starlink propio?:* ${data.hasEquipment}`);
   if (data.message.trim()) {
@@ -132,6 +124,21 @@ export function QuoteForm() {
           <FieldError id="fullName-error" message={errors.fullName} />
         </div>
         <div>
+          <Label htmlFor="company">
+            Empresa{" "}
+            <span className="font-normal text-slate-500">(opcional)</span>
+          </Label>
+          <input
+            id="company"
+            type="text"
+            autoComplete="organization"
+            value={data.company}
+            onChange={(e) => update("company", e.target.value)}
+            placeholder="Nombre de tu empresa o proyecto"
+            className={inputClass}
+          />
+        </div>
+        <div>
           <Label htmlFor="phone" required>
             Teléfono / WhatsApp
           </Label>
@@ -142,7 +149,7 @@ export function QuoteForm() {
             autoComplete="tel"
             value={data.phone}
             onChange={(e) => update("phone", e.target.value)}
-            placeholder="Ej.: 387 4xx-xxxx"
+            placeholder="Con código de país, ej. +54 9 387 577-7543"
             className={inputClass}
             aria-invalid={!!errors.phone}
             aria-describedby={errors.phone ? "phone-error" : undefined}
@@ -168,81 +175,76 @@ export function QuoteForm() {
           <FieldError id="email-error" message={errors.email} />
         </div>
         <div>
-          <Label htmlFor="locality" required>
-            Localidad
+          <Label htmlFor="country" required>
+            País
           </Label>
-          <select
-            id="locality"
-            value={data.locality}
-            onChange={(e) => update("locality", e.target.value)}
-            className={inputClass}
-            aria-invalid={!!errors.locality}
-            aria-describedby={errors.locality ? "locality-error" : undefined}
-          >
-            <option value="">Seleccioná una localidad</option>
-            {LOCALITIES.map((locality) => (
-              <option key={locality} value={locality}>
-                {locality}
-              </option>
-            ))}
-          </select>
-          <FieldError id="locality-error" message={errors.locality} />
-        </div>
-        <div className="sm:col-span-2">
-          <Label htmlFor="zone">Barrio o zona</Label>
           <input
-            id="zone"
+            id="country"
             type="text"
-            value={data.zone}
-            onChange={(e) => update("zone", e.target.value)}
-            placeholder="Ej.: centro, barrio, paraje o referencia"
+            autoComplete="country-name"
+            value={data.country}
+            onChange={(e) => update("country", e.target.value)}
+            placeholder="Ej.: Argentina"
             className={inputClass}
+            aria-invalid={!!errors.country}
+            aria-describedby={errors.country ? "country-error" : undefined}
           />
+          <FieldError id="country-error" message={errors.country} />
         </div>
-
-                <div>
-          <Label htmlFor="clientType" required>
-            Tipo de cliente
+        <div>
+          <Label htmlFor="province" required>
+            Provincia / región
+          </Label>
+          <input
+            id="province"
+            type="text"
+            value={data.province}
+            onChange={(e) => update("province", e.target.value)}
+            placeholder="Ej.: Salta"
+            className={inputClass}
+            aria-invalid={!!errors.province}
+            aria-describedby={errors.province ? "province-error" : undefined}
+          />
+          <FieldError id="province-error" message={errors.province} />
+        </div>
+        <div>
+          <Label htmlFor="city" required>
+            Ciudad / localidad
+          </Label>
+          <input
+            id="city"
+            type="text"
+            value={data.city}
+            onChange={(e) => update("city", e.target.value)}
+            placeholder="Ej.: Salta Capital"
+            className={inputClass}
+            aria-invalid={!!errors.city}
+            aria-describedby={errors.city ? "city-error" : undefined}
+          />
+          <FieldError id="city-error" message={errors.city} />
+        </div>
+        <div>
+          <Label htmlFor="projectType" required>
+            Tipo de proyecto
           </Label>
           <select
-            id="clientType"
-            value={data.clientType}
-            onChange={(e) => update("clientType", e.target.value)}
+            id="projectType"
+            value={data.projectType}
+            onChange={(e) => update("projectType", e.target.value)}
             className={inputClass}
-            aria-invalid={!!errors.clientType}
+            aria-invalid={!!errors.projectType}
             aria-describedby={
-              errors.clientType ? "clientType-error" : undefined
+              errors.projectType ? "projectType-error" : undefined
             }
           >
             <option value="">Seleccioná una opción</option>
-            {CLIENT_TYPES.map((type) => (
+            {PROJECT_TYPES.map((type) => (
               <option key={type.value} value={type.value}>
                 {type.label}
               </option>
             ))}
           </select>
-          <FieldError id="clientType-error" message={errors.clientType} />
-        </div>
-        <div>
-          <Label htmlFor="service" required>
-            Servicio solicitado
-          </Label>
-          <select
-            id="service"
-            value={data.service}
-            onChange={(e) => update("service", e.target.value)}
-            className={inputClass}
-            aria-invalid={!!errors.service}
-            aria-describedby={errors.service ? "service-error" : undefined}
-          >
-            <option value="">Seleccioná un servicio</option>
-            {SERVICE_OPTIONS.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
-          <FieldError id="service-error" message={errors.service} />
+          <FieldError id="projectType-error" message={errors.projectType} />
         </div>
         <div className="sm:col-span-2">
           <Label htmlFor="message">Descripción de la necesidad</Label>

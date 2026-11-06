@@ -14,9 +14,9 @@ const inter = Inter({
 });
 
 const DEFAULT_TITLE =
-  "NODO Telecom — Conectividad, redes e infraestructura en Salta";
+  "NODO Telecom — Conectividad, redes e infraestructura tecnológica";
 const DEFAULT_DESCRIPTION =
-  "Soluciones de internet satelital Starlink, redes y conectividad e infraestructura tecnológica para hogares, comercios y establecimientos rurales en Salta, Argentina.";
+  "NODO Telecom integra soluciones de conectividad, redes e infraestructura tecnológica: instalación Starlink, redes LAN y Wi-Fi, cableado estructurado y conectividad industrial y rural, desde Salta, Argentina, con alcance nacional e internacional.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -26,16 +26,23 @@ export const metadata: Metadata = {
   },
   description: DEFAULT_DESCRIPTION,
   keywords: [
-    "Instalación Starlink Salta",
-    "Internet satelital Salta",
-    "Redes informáticas Salta",
-    "Instalación de redes LAN",
-    "Cableado estructurado Salta",
-    "Soluciones de conectividad rural",
-    "Infraestructura tecnológica Salta",
+    "NODO Telecom",
+    "Conectividad en Salta",
+    "Instalación Starlink en Salta",
+    "Redes empresariales",
+    "Infraestructura de telecomunicaciones",
+    "Conectividad para empresas",
+    "Conectividad rural",
+    "Redes LAN y Wi-Fi",
+    "Infraestructura tecnológica",
+    "Soluciones de conectividad industrial",
+    "Conectividad para minería",
   ],
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
+  alternates: {
+    canonical: siteConfig.domain,
+  },
   openGraph: {
     type: "website",
     locale: "es_AR",
