@@ -5,16 +5,17 @@ export const siteConfig = {
   location: "Salta, Argentina",
 
   // URL pública del sitio. Se resuelve desde variables de entorno.
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://nodotele.com",
+  // Se usa || (y no ??) para que también caiga al valor por defecto si la variable está vacía.
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://nodotele.com",
   domain: "https://nodotele.com",
 
   // ---------------------------------------------------------------
   // Datos de contacto — PLACEHOLDERS: reemplazar por los datos reales.
   // ---------------------------------------------------------------
   // Formato internacional sin "+", espacios ni guiones (ej. 549387XXXXXXX).
-  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "5493875777543",
+  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5493875777543",
   whatsappDisplay: "+54 9 387 577-7543",
-  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "",
+  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "",
 
   // Mensaje inicial predefinido para los botones de WhatsApp.
   whatsappDefaultMessage:
