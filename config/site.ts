@@ -20,3 +20,7 @@ export const SHOW_TESTIMONIALS = false;
 
 // Sección de casos de experiencia.
 export const SHOW_CASES = true;
+
+// Sección de galería de instalaciones: oculta hasta que haya fotos reales
+// cargadas en /public/images/galeria/. Poner true para mostrarla.
+export const SHOW_GALLERY = false;

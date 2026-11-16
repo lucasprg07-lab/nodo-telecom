@@ -1,36 +1,24 @@
-export interface GalleryItem {
-  src?: string;
-  alt: string;
-  title: string;
-}
+import { readdirSync } from "fs";
+import { join } from "path";
+import type { GalleryItem } from "@/types";
+
+const GALLERY_DIR = join(process.cwd(), "public", "images", "galeria");
 
 /**
- * Galería de instalaciones. Mientras no haya fotos reales, `src` queda vacío
- * y se muestra un placeholder. El dueño carga las fotos y el `alt` definitivo.
+ * Lee las fotos reales de /public/images/galeria/ en build time.
+ * Devuelve una lista vacía si la carpeta no existe o no hay imágenes.
+ * El `alt` se genera a partir del nombre del archivo (editable luego).
  */
-export const galleryItems: GalleryItem[] = [
-  {
-    title: "Instalación en hogar",
-    alt: "Instalación de antena satelital en una vivienda",
-  },
-  {
-    title: "Instalación en comercio",
-    alt: "Instalación de antena satelital en un comercio",
-  },
-  {
-    title: "Cableado estructurado",
-    alt: "Tendido y organización de cableado estructurado",
-  },
-  {
-    title: "Redes y puntos de acceso",
-    alt: "Configuración de red y puntos de acceso",
-  },
-  {
-    title: "Entorno industrial",
-    alt: "Instalación de conectividad en entorno industrial",
-  },
-  {
-    title: "Zona rural",
-    alt: "Instalación de conectividad en zona rural",
-  },
-];
+export function getGalleryItems(): GalleryItem[] {
+  try {
+    return readdirSync(GALLERY_DIR)
+      .filter((file) => /\.(png|jpe?g|webp)$/i.test(file))
+      .sort()
+      .map((file) => ({
+        src: `/images/galeria/${file}`,
+        alt: file.replace(/\.[^.]+$/, "").replace(/[-_]+/g, " "),
+      }));
+  } catch {
+    return [];
+  }
+}

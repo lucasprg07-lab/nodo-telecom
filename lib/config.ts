@@ -5,6 +5,7 @@ import {
   VISIT_PRICE,
   SHOW_TESTIMONIALS,
   SHOW_CASES,
+  SHOW_GALLERY,
 } from "@/config/site";
 
 export const siteConfig = {
@@ -32,6 +33,7 @@ export const siteConfig = {
   visitPrice: VISIT_PRICE,
   showTestimonials: SHOW_TESTIMONIALS,
   showCases: SHOW_CASES,
+  showGallery: SHOW_GALLERY,
 
   // Mensaje inicial predefinido para los botones de WhatsApp.
   whatsappDefaultMessage:

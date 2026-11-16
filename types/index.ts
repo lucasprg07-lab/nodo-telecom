@@ -63,3 +63,8 @@ export interface QuoteFormData {
 
 export type QuoteFormErrors = Partial<Record<keyof QuoteFormData, string>>;
 
+export interface GalleryItem {
+  src: string;
+  alt: string;
+}
+
