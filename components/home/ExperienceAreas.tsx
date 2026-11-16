@@ -7,7 +7,7 @@ import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 
 export function ExperienceAreas() {
   return (
-    <section className="bg-slate-50 py-16 sm:py-24">
+    <section className="py-16 sm:py-24">
       <Container>
         <SectionHeading
           eyebrow="Experiencia profesional"
@@ -19,7 +19,7 @@ export function ExperienceAreas() {
             const Icon = area.icon;
             return (
               <Reveal key={area.title} delay={index * 75} className="h-full">
-                <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-navy-100 bg-white shadow-sm">
+                <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5">
                   <ImagePlaceholder
                     src={area.image}
                     alt={area.imageAlt}
@@ -28,22 +28,22 @@ export function ExperienceAreas() {
                     label={area.title}
                   />
                   <div className="flex flex-1 flex-col p-6">
-                    <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-electric-50 text-electric-600">
+                    <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-cyan-400/10 text-cyan-400">
                       <Icon className="h-5 w-5" />
                     </div>
-                    <h3 className="mt-4 text-lg font-bold text-navy-900">
+                    <h3 className="mt-4 text-lg font-bold text-white">
                       {area.title}
                     </h3>
-                    <p className="mt-2 text-sm text-slate-600">
+                    <p className="mt-2 text-sm text-slate-300">
                       {area.description}
                     </p>
                     <ul className="mt-4 space-y-2">
                       {area.items.map((item) => (
                         <li
                           key={item}
-                          className="flex items-start gap-2 text-sm text-slate-700"
+                          className="flex items-start gap-2 text-sm text-slate-300"
                         >
-                          <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-electric-500" />
+                          <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-cyan-400" />
                           {item}
                         </li>
                       ))}

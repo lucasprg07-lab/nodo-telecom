@@ -10,7 +10,6 @@ export function GlobalReach() {
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <SectionHeading
-              dark
               align="left"
               eyebrow="Alcance"
               title="Conectividad local. Alcance global."

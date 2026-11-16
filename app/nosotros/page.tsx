@@ -24,10 +24,9 @@ const values = [
 export default function NosotrosPage() {
   return (
     <>
-      <section className="bg-navy-950 py-16 sm:py-20">
+      <section className="py-16 sm:py-20">
         <Container>
           <SectionHeading
-            dark
             eyebrow="Nosotros"
             title="Una empresa tecnológica, no una instalación improvisada"
             description="Conectividad, redes e infraestructura con criterio profesional en Salta y alrededores."
@@ -37,7 +36,7 @@ export default function NosotrosPage() {
 
       <section className="py-16 sm:py-20">
         <Container className="grid gap-12 lg:grid-cols-2 lg:items-start">
-          <div className="space-y-6 text-slate-600">
+          <div className="space-y-6 text-slate-300">
             <p className="text-lg leading-relaxed">
               NODO Telecom es una empresa de servicios tecnológicos de Salta,
               Argentina, orientada a brindar soluciones de conectividad e
@@ -57,7 +56,7 @@ export default function NosotrosPage() {
           </div>
 
           <div className="space-y-6">
-            <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-navy-100">
+            <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-white/10">
               <Image
                 src="/images/nosotros.png"
                 alt="Técnico de NODO Telecom instalando equipos de conectividad en Salta"
@@ -66,11 +65,11 @@ export default function NosotrosPage() {
                 className="object-cover"
               />
             </div>
-            <div className="rounded-2xl border border-navy-100 bg-slate-50 p-6">
-              <h2 className="text-lg font-bold text-navy-900">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <h2 className="text-lg font-bold text-white">
                 Transparencia sobre el modelo Starlink
               </h2>
-            <p className="mt-3 text-sm leading-relaxed text-slate-600">
+            <p className="mt-3 text-sm leading-relaxed text-slate-300">
               NODO Telecom no es un proveedor de internet ni un revendedor de
               planes Starlink. Vos contratás y mantenés tu propia suscripción de
               Starlink; nosotros realizamos el trabajo técnico: relevamiento,
@@ -88,7 +87,7 @@ export default function NosotrosPage() {
             eyebrow="Trayectoria"
             title="Experiencia que conecta. Soluciones que responden."
           />
-          <div className="mt-6 space-y-4 text-slate-600">
+          <div className="mt-6 space-y-4 text-slate-300">
             <p className="text-lg leading-relaxed">
               Detrás de NODO Telecom hay profesionales con más de cinco años de
               experiencia en el sector de las telecomunicaciones, participando
@@ -110,7 +109,7 @@ export default function NosotrosPage() {
         </Container>
       </section>
 
-      <section className="bg-slate-50 py-16 sm:py-20">
+      <section className="py-16 sm:py-20">
         <Container className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <SectionHeading
@@ -122,7 +121,7 @@ export default function NosotrosPage() {
               {values.map((value) => (
                 <li key={value} className="flex items-start gap-3">
                   <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-electric-500" />
-                  <span className="text-slate-700">{value}</span>
+                  <span className="text-slate-300">{value}</span>
                 </li>
               ))}
             </ul>
@@ -139,7 +138,7 @@ export default function NosotrosPage() {
               {LOCALITIES.map((locality) => (
                 <span
                   key={locality}
-                  className="rounded-full bg-white px-3 py-1.5 text-sm font-medium text-navy-700 ring-1 ring-navy-100"
+                  className="rounded-full bg-white/5 px-3 py-1.5 text-sm font-medium text-slate-200 ring-1 ring-white/10"
                 >
                   {locality}
                 </span>

@@ -1,3 +1,12 @@
+import {
+  SITE_URL,
+  CONTACT_EMAIL,
+  WHATSAPP,
+  VISIT_PRICE,
+  SHOW_TESTIMONIALS,
+  SHOW_CASES,
+} from "@/config/site";
+
 export const siteConfig = {
   name: "NODO Telecom",
   slogan: "Conectamos lo que importa.",
@@ -6,16 +15,23 @@ export const siteConfig = {
 
   // URL pública del sitio. Se resuelve desde variables de entorno.
   // Se usa || (y no ??) para que también caiga al valor por defecto si la variable está vacía.
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://nodotele.com",
-  domain: "https://nodotele.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL || SITE_URL,
+  domain: SITE_URL,
 
   // ---------------------------------------------------------------
   // Datos de contacto — PLACEHOLDERS: reemplazar por los datos reales.
   // ---------------------------------------------------------------
   // Formato internacional sin "+", espacios ni guiones (ej. 549387XXXXXXX).
-  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5493875777543",
+  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || WHATSAPP,
   whatsappDisplay: "+54 9 387 577-7543",
-  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "",
+  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || CONTACT_EMAIL,
+
+  // ---------------------------------------------------------------
+  // Configuración de la web (ver /config/site.ts).
+  // ---------------------------------------------------------------
+  visitPrice: VISIT_PRICE,
+  showTestimonials: SHOW_TESTIMONIALS,
+  showCases: SHOW_CASES,
 
   // Mensaje inicial predefinido para los botones de WhatsApp.
   whatsappDefaultMessage:
@@ -34,6 +50,7 @@ export const siteConfig = {
     { label: "Inicio", href: "/" },
     { label: "Servicios", href: "/servicios" },
     { label: "Soluciones", href: "/soluciones" },
+    { label: "Casos", href: "/casos" },
     { label: "Nosotros", href: "/nosotros" },
     { label: "Contacto", href: "/contacto" },
   ],

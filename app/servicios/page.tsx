@@ -4,12 +4,14 @@ import { services } from "@/lib/data";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ServiceDetail } from "@/components/services/ServiceDetail";
+import { FlotasEmbarcaciones } from "@/components/home/FlotasEmbarcaciones";
+import { AltaCapacidad } from "@/components/home/AltaCapacidad";
 import { CallToAction } from "@/components/home/CallToAction";
 
 export const metadata: Metadata = {
   title: "Servicios",
   description:
-    "Instalación de Starlink, redes LAN y Wi-Fi, cableado estructurado e infraestructura tecnológica. Soluciones integrales de conectividad para empresas, industria y ubicaciones remotas.",
+    "Instalación de Starlink, redes LAN y Wi-Fi, alta capacidad satelital y servicio itinerante para flotas y embarcaciones.",
 };
 
 const VALUE_PROPOSITION = [
@@ -27,18 +29,17 @@ const VALUE_PROPOSITION = [
 export default function ServiciosPage() {
   return (
     <>
-      <section className="bg-navy-950 py-16 sm:py-20">
+      <section className="py-16 sm:py-20">
         <Container>
           <SectionHeading
-            dark
             eyebrow="Servicios"
             title="Soluciones técnicas de conectividad"
-            description="Servicios de instalación, configuración, integración y mantenimiento para hogares, comercios y establecimientos rurales."
+            description="Servicios de instalación, configuración, integración y mantenimiento para hogares, comercios, industria y minería, flotas y embarcaciones."
           />
         </Container>
       </section>
 
-      <section className="py-16 sm:py-20">
+      <section className="pb-16 sm:pb-20">
         <Container className="space-y-16 sm:space-y-20">
           {services.map((service, index) => (
             <ServiceDetail key={service.slug} service={service} index={index} />
@@ -46,7 +47,10 @@ export default function ServiciosPage() {
         </Container>
       </section>
 
-      <section className="bg-slate-50 py-16 sm:py-20">
+      <FlotasEmbarcaciones />
+      <AltaCapacidad />
+
+      <section className="py-16 sm:py-20">
         <Container>
           <SectionHeading
             eyebrow="Propuesta integral"
@@ -57,9 +61,9 @@ export default function ServiciosPage() {
             {VALUE_PROPOSITION.map((item) => (
               <div
                 key={item}
-                className="flex items-start gap-2 rounded-xl border border-navy-100 bg-white p-4 text-sm text-slate-700"
+                className="flex items-start gap-2 rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-slate-300"
               >
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-electric-500" />
+                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-cyan-400" />
                 {item}
               </div>
             ))}

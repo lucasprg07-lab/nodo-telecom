@@ -9,6 +9,7 @@ export interface Service {
   applications: string[];
   image?: string;
   icon: LucideIcon;
+  featured?: boolean;
 }
 
 export interface Benefit {

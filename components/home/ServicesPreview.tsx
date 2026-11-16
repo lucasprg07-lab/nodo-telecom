@@ -8,14 +8,14 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function ServicesPreview() {
   return (
-    <section className="bg-white py-16 sm:py-24">
+    <section className="py-16 sm:py-24">
       <Container>
         <SectionHeading
           eyebrow="Servicios"
-          title="Soluciones técnicas de conectividad"
-          description="Internet satelital Starlink, redes y conectividad, infraestructura tecnológica y soluciones para empresas y zonas rurales."
+          title="Conectividad para cada necesidad"
+          description="Hogares, pymes, industria y minería, alta capacidad satelital y conectividad en movimiento para flotas y embarcaciones."
         />
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <Reveal key={service.slug} delay={index * 75} className="h-full">
               <ServiceCard service={service} />

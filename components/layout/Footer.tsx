@@ -67,6 +67,14 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link
+                  href="/faq"
+                  className="text-sm text-slate-400 transition hover:text-electric-400"
+                >
+                  Preguntas frecuentes
+                </Link>
+              </li>
             </ul>
           </div>
 

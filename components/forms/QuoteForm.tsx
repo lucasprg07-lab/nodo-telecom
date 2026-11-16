@@ -25,7 +25,7 @@ const initialData: QuoteFormData = {
 };
 
 const inputClass =
-  "block w-full rounded-lg border border-navy-200 bg-white px-3.5 py-2.5 text-sm text-navy-900 placeholder-slate-400 shadow-sm transition focus:border-electric-500 focus:outline-none focus:ring-2 focus:ring-electric-500/30";
+  "block w-full rounded-lg border border-white/10 bg-white/5 px-3.5 py-2.5 text-sm text-white placeholder-slate-500 transition focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/30";
 
 function buildMessage(data: QuoteFormData): string {
   const lines = [
@@ -55,7 +55,7 @@ function buildMessage(data: QuoteFormData): string {
 function FieldError({ id, message }: { id: string; message?: string }) {
   if (!message) return null;
   return (
-    <p id={id} className="mt-1.5 text-sm text-red-600">
+    <p id={id} className="mt-1.5 text-sm text-red-400">
       {message}
     </p>
   );
@@ -71,7 +71,7 @@ function Label({
   required?: boolean;
 }) {
   return (
-    <label htmlFor={htmlFor} className="block text-sm font-medium text-navy-800">
+    <label htmlFor={htmlFor} className="block text-sm font-medium text-slate-200">
       {children}
       {required ? <span className="text-red-500"> *</span> : null}
     </label>
@@ -237,9 +237,15 @@ export function QuoteForm() {
               errors.projectType ? "projectType-error" : undefined
             }
           >
-            <option value="">Seleccioná una opción</option>
+            <option value="" className="bg-[#0a1827] text-white">
+              Seleccioná una opción
+            </option>
             {PROJECT_TYPES.map((type) => (
-              <option key={type.value} value={type.value}>
+              <option
+                key={type.value}
+                value={type.value}
+                className="bg-[#0a1827] text-white"
+              >
                 {type.label}
               </option>
             ))}
@@ -260,14 +266,14 @@ export function QuoteForm() {
       </div>
 
       <fieldset>
-        <legend className="text-sm font-medium text-navy-800">
-          ¿Ya cuenta con Starlink? <span className="text-red-500">*</span>
+        <legend className="text-sm font-medium text-slate-200">
+          ¿Ya cuenta con Starlink? <span className="text-red-400">*</span>
         </legend>
         <div className="mt-2 flex flex-wrap gap-3">
           {STARLINK_OPTIONS.map((option) => (
             <label
               key={option.value}
-              className="inline-flex cursor-pointer items-center gap-2 rounded-lg border border-navy-200 px-3.5 py-2 text-sm transition has-[:checked]:border-electric-500 has-[:checked]:bg-electric-50"
+              className="inline-flex cursor-pointer items-center gap-2 rounded-lg border border-white/10 px-3.5 py-2 text-sm text-slate-200 transition has-[:checked]:border-cyan-400 has-[:checked]:bg-cyan-400/10"
             >
               <input
                 type="radio"
@@ -285,14 +291,14 @@ export function QuoteForm() {
       </fieldset>
 
       <fieldset>
-        <legend className="text-sm font-medium text-navy-800">
-          ¿Tiene equipo Starlink propio? <span className="text-red-500">*</span>
+        <legend className="text-sm font-medium text-slate-200">
+          ¿Tiene equipo Starlink propio? <span className="text-red-400">*</span>
         </legend>
         <div className="mt-2 flex flex-wrap gap-3">
           {EQUIPMENT_OPTIONS.map((option) => (
             <label
               key={option.value}
-              className="inline-flex cursor-pointer items-center gap-2 rounded-lg border border-navy-200 px-3.5 py-2 text-sm transition has-[:checked]:border-electric-500 has-[:checked]:bg-electric-50"
+              className="inline-flex cursor-pointer items-center gap-2 rounded-lg border border-white/10 px-3.5 py-2 text-sm text-slate-200 transition has-[:checked]:border-cyan-400 has-[:checked]:bg-cyan-400/10"
             >
               <input
                 type="radio"
@@ -309,8 +315,8 @@ export function QuoteForm() {
         <FieldError id="hasEquipment-error" message={errors.hasEquipment} />
       </fieldset>
 
-      <div className="rounded-lg border border-dashed border-navy-200 bg-slate-50 p-4 text-sm text-slate-600">
-        <p className="font-medium text-navy-800">Fotografías del lugar</p>
+      <div className="rounded-lg border border-dashed border-white/20 bg-white/5 p-4 text-sm text-slate-300">
+        <p className="font-medium text-white">Fotografías del lugar</p>
         <p className="mt-1">
           La carga de fotos estará disponible próximamente. Por ahora, podés
           enviarlas por WhatsApp después de iniciar la conversación.

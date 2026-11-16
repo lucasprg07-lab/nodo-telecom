@@ -1,8 +1,4 @@
 import {
-  Satellite,
-  Network,
-  Server,
-  Building2,
   SlidersHorizontal,
   BadgeCheck,
   GitMerge,
@@ -15,93 +11,103 @@ import {
   Trees,
   Warehouse,
   Factory,
+  Layers,
+  Ship,
 } from "lucide-react";
 import type { Benefit, Service, Solution } from "@/types";
 
 export const services: Service[] = [
   {
-    slug: "starlink",
-    name: "Internet satelital Starlink",
+    slug: "hogar",
+    name: "Hogar",
     shortDescription:
-      "Instalación, configuración y optimización de equipos Starlink para hogares, comercios y zonas rurales.",
+      "Internet satelital y Wi-Fi para tu casa, con instalación profesional y cobertura estable.",
     description:
-      "Nos encargamos del relevamiento del lugar, la instalación y fijación de la antena, el tendido de cableado y la puesta en marcha del servicio. Importante: NODO Telecom no es proveedor de internet ni revendedor de planes Starlink; vos contratás y mantenés tu propia suscripción y nosotros realizamos el trabajo técnico profesional.",
+      "Instalamos y configuramos internet satelital Starlink en viviendas, junto con la red Wi-Fi interna para que toda la casa quede conectada. Hacemos el relevamiento del lugar, fijamos la antena, organizamos el cableado y dejamos el servicio funcionando.",
     benefits: [
-      "Relevamiento del lugar de instalación.",
-      "Evaluación de ubicación y visibilidad del cielo.",
-      "Instalación y fijación de antenas.",
-      "Tendido y organización de cableado.",
-      "Configuración y puesta en marcha.",
-      "Optimización de conectividad.",
-      "Integración con redes existentes.",
-      "Configuración de Wi-Fi.",
+      "Relevamiento del lugar antes de instalar.",
+      "Instalación y fijación de la antena.",
+      "Configuración de Wi-Fi y cobertura.",
+      "Organización del cableado.",
+      "Soporte técnico posterior.",
+    ],
+    applications: ["Casas", "Viviendas rurales", "Cabañas"],
+    image: "/images/solutions/hogar.png",
+    icon: Home,
+  },
+  {
+    slug: "pyme-comercio",
+    name: "Pyme y comercio",
+    shortDescription:
+      "Redes estables y ordenadas para negocios, oficinas y comercios que no pueden depender de conexiones improvisadas.",
+    description:
+      "Diseñamos e instalamos la red de tu comercio u oficina: puntos de acceso, cableado y configuración, para lograr una cobertura estable y prolija. Diagnosticamos y resolvemos problemas de conectividad integrando tu red local.",
+    benefits: [
+      "Redes LAN y cableado estructurado.",
+      "Puntos de acceso y cobertura Wi-Fi.",
+      "Configuración de routers y equipos.",
+      "Diagnóstico de conectividad.",
+      "Integración con tu red existente.",
+    ],
+    applications: ["Comercios", "Oficinas", "Depósitos"],
+    image: "/images/servicio-redes.png",
+    icon: Store,
+  },
+  {
+    slug: "industria-mineria",
+    name: "Industria y minería",
+    shortDescription:
+      "Conectividad e infraestructura tecnológica para operaciones industriales y mineras en zonas remotas.",
+    description:
+      "Abordamos proyectos de conectividad e infraestructura tecnológica para entornos operativos exigentes: relevamiento, instalación, integración y soporte. Incluye soluciones satelitales de alta capacidad para operaciones que necesitan continuidad.",
+    benefits: [
+      "Relevamiento técnico en sitio.",
+      "Instalación e integración de equipos.",
+      "Redundancia y continuidad de conexión.",
+      "Monitoreo remoto de nodos.",
+      "Infraestructura y soporte técnico.",
+    ],
+    applications: ["Minería", "Industria", "Ubicaciones remotas"],
+    image: "/images/solutions/mineria.png",
+    icon: Factory,
+  },
+  {
+    slug: "alta-capacidad",
+    name: "Alta capacidad satelital",
+    shortDescription:
+      "Múltiples Starlink en una sola conexión para sumar capacidad y redundancia.",
+    description:
+      "Combinamos varios terminales Starlink en una sola conexión para operaciones que necesitan más velocidad y continuidad, en zonas sin infraestructura terrestre. Se diseña a medida de cada operación y se cotiza como proyecto.",
+    benefits: [
+      "Mayor capacidad: se suma la de los enlaces.",
+      "Redundancia: si un terminal falla, la conexión sigue.",
+      "Escalable: se agregan terminales según la necesidad.",
+      "Sin infraestructura terrestre.",
+      "Monitoreo remoto.",
       "Soporte técnico.",
     ],
-    applications: [
-      "Hogares",
-      "Comercios y oficinas",
-      "Cabañas y alojamientos",
-      "Zonas rurales",
-    ],
-    image: "/images/servicio-starlink.png",
-    icon: Satellite,
+    applications: ["Minería", "Industria", "Operaciones críticas"],
+    image: "/images/solutions/alta-capacidad.png",
+    icon: Layers,
+    featured: true,
   },
   {
-    slug: "redes",
-    name: "Redes y conectividad",
+    slug: "flotas-embarcaciones",
+    name: "Flotas y embarcaciones",
     shortDescription:
-      "Diseño, instalación y optimización de redes locales para entornos residenciales y comerciales.",
+      "Servicio itinerante: conectividad móvil de Starlink para vehículos, flotas y embarcaciones.",
     description:
-      "Planificamos e instalamos redes LAN, cableado estructurado y puntos de acceso para lograr una cobertura estable y ordenada. Diagnosticamos y resolvemos problemas de conectividad integrando los dispositivos de tu red local.",
+      "Conectividad en movimiento para camiones, vehículos de campo, buses, yates, barcos de pesca y embarcaciones. Asesoramos entre planes con límite de datos o ilimitados y gestionamos la solución.",
     benefits: [
-      "Instalación de redes LAN.",
-      "Cableado estructurado.",
-      "Instalación de puntos de red Ethernet.",
-      "Configuración de routers y puntos de acceso.",
-      "Optimización de cobertura Wi-Fi.",
-      "Diagnóstico y solución de problemas de conectividad.",
-      "Integración de dispositivos y redes locales.",
+      "Conectividad en movimiento en zonas remotas.",
+      "Vehículos, flotas y embarcaciones.",
+      "Planes con límite de datos o ilimitados.",
+      "Asesoramiento según la operación.",
+      "Instalación en techo (nunca en parabrisas).",
     ],
-    applications: ["Hogares", "Oficinas", "Comercios", "Depósitos y espacios de trabajo"],
-    image: "/images/servicio-redes.png",
-    icon: Network,
-  },
-  {
-    slug: "infraestructura",
-    name: "Infraestructura tecnológica",
-    shortDescription:
-      "Organización, mantenimiento y diagnóstico de infraestructura de red y telecomunicaciones.",
-    description:
-      "Organizamos racks y cableado, planificamos infraestructura de telecomunicaciones y brindamos asesoramiento técnico para que tu red sea prolija, segura y fácil de mantener.",
-    benefits: [
-      "Instalación y organización de racks.",
-      "Organización de cableado.",
-      "Infraestructura de telecomunicaciones.",
-      "Enlaces de conectividad.",
-      "Asesoramiento técnico.",
-      "Mantenimiento y diagnóstico de infraestructura.",
-    ],
-    applications: ["Empresas", "Industrias", "Comercios", "Instituciones"],
-    image: "/images/servicio-infraestructura.png",
-    icon: Server,
-  },
-  {
-    slug: "empresas-rurales",
-    name: "Soluciones para empresas y establecimientos rurales",
-    shortDescription:
-      "Conectividad y redes a medida para operaciones comerciales, turísticas y productivas.",
-    description:
-      "Diseñamos soluciones de conectividad para alojamientos, comercios, oficinas y establecimientos rurales. Cada propuesta se elabora a partir de un relevamiento técnico y queda sujeta a evaluación de viabilidad y coordinación.",
-    benefits: [
-      "Conectividad para alojamientos y cabañas.",
-      "Conectividad para comercios y oficinas.",
-      "Redes para establecimientos rurales.",
-      "Soluciones para depósitos y espacios de trabajo.",
-      "Relevamientos y propuestas técnicas personalizadas.",
-    ],
-    applications: ["Cabañas y turismo", "Producción rural", "Depósitos", "Empresas"],
-    image: "/images/solucion-productivo.png",
-    icon: Building2,
+    applications: ["Flotas", "Embarcaciones", "Vehículos de campo"],
+    image: "/images/solutions/flotas.png",
+    icon: Ship,
   },
 ];
 

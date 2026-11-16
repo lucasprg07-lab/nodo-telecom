@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
-import { Inter } from "next/font/google";
+import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/lib/config";
 import { Navbar } from "@/components/layout/Navbar";
@@ -10,6 +10,18 @@ import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
   display: "swap",
 });
 
@@ -37,6 +49,13 @@ export const metadata: Metadata = {
     "Infraestructura tecnológica",
     "Soluciones de conectividad industrial",
     "Conectividad para minería",
+    "Internet satelital para flotas",
+    "Conectividad para embarcaciones",
+    "Internet satelital para minería",
+    "Redundancia satelital",
+    "Starlink Salta",
+    "Alta capacidad satelital",
+    "Servicio itinerante Starlink",
   ],
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
@@ -77,14 +96,52 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": `${siteConfig.url}/#negocio`,
+      name: siteConfig.name,
+      url: siteConfig.url,
+      image: `${siteConfig.url}/images/og-image.png`,
+      description: DEFAULT_DESCRIPTION,
+      telephone: `+${siteConfig.whatsappNumber}`,
+      areaServed: "Argentina",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Salta",
+        addressRegion: "Salta",
+        addressCountry: "AR",
+      },
+    },
+    {
+      "@type": "Service",
+      "@id": `${siteConfig.url}/#servicio`,
+      name: "Conectividad satelital y redes",
+      serviceType:
+        "Instalación y soporte de conectividad satelital, redes e infraestructura tecnológica",
+      provider: { "@id": `${siteConfig.url}/#negocio` },
+      areaServed: "Argentina",
+    },
+  ],
+};
+
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="es" className={inter.variable}>
-      <body className="min-h-screen bg-white font-sans text-navy-900 antialiased">
+    <html
+      lang="es"
+      className={`${inter.variable} ${spaceGrotesk.variable} ${jetBrainsMono.variable}`}
+    >
+      <body className="min-h-screen font-sans antialiased">
         <Navbar />
         <main id="contenido">{children}</main>
         <Footer />
         <WhatsAppButton />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </body>
     </html>
   );
