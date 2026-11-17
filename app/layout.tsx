@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     description: DEFAULT_DESCRIPTION,
     images: [
       {
-        url: "/images/og-image.png",
+        url: "/images/og-image.jpg",
         width: 1672,
         height: 941,
         alt: DEFAULT_TITLE,
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: DEFAULT_TITLE,
     description: DEFAULT_DESCRIPTION,
-    images: ["/images/og-image.png"],
+    images: ["/images/og-image.jpg"],
   },
   robots: {
     index: true,
@@ -104,7 +104,7 @@ const jsonLd = {
       "@id": `${siteConfig.url}/#negocio`,
       name: siteConfig.name,
       url: siteConfig.url,
-      image: `${siteConfig.url}/images/og-image.png`,
+      image: `${siteConfig.url}/images/og-image.jpg`,
       description: DEFAULT_DESCRIPTION,
       telephone: `+${siteConfig.whatsappNumber}`,
       areaServed: "Argentina",
