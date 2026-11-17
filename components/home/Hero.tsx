@@ -52,7 +52,7 @@ export function Hero() {
         >
           <div className="relative aspect-[16/9] overflow-hidden rounded-3xl border border-white/10 bg-white/5">
             <Image
-              src="/images/solutions/hero.png"
+              src="/images/solutions/hero.webp"
               alt="Instalación profesional de una antena satelital al atardecer en Salta, Argentina"
               fill
               priority

@@ -58,7 +58,7 @@ export function AltaCapacidad() {
         <Reveal>
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-white/5">
             <Image
-              src="/images/solutions/alta-capacidad.png"
+              src="/images/solutions/alta-capacidad.webp"
               alt="Solución de alta capacidad satelital con múltiples terminales (imagen ilustrativa)"
               fill
               className="object-cover"

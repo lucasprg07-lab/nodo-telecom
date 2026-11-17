@@ -13,7 +13,7 @@ const casos = [
       "Nodo VHF de una minera, sin conectividad a internet, imposible de monitorear a distancia.",
     solucion: "Starlink más un router que crea un túnel seguro hasta la empresa.",
     resultado: "El cliente pudo monitorear el nodo en forma remota.",
-    image: "/images/solutions/vhf.png",
+    image: "/images/solutions/vhf.webp",
   },
   {
     titulo: "Repetidoras VHF integradas por internet (trunking)",
@@ -23,7 +23,7 @@ const casos = [
       "Conectividad satelital en cada repetidora y enlace entre ellas a través de internet.",
     resultado:
       "Las repetidoras se ven entre sí y operan integradas, ampliando la cobertura de comunicación.",
-    image: "/images/solutions/vhf.png",
+    image: "/images/solutions/vhf.webp",
   },
   {
     titulo: "Puntos de monitoreo con cámaras",
@@ -33,7 +33,7 @@ const casos = [
     solucion:
       "Poste o gabinete con cámaras y Starlink, más un router que crea un túnel seguro hasta la central de monitoreo.",
     resultado: "Las imágenes y el video llegan a la central de monitoreo del cliente.",
-    image: "/images/solutions/monitoreo.png",
+    image: "/images/solutions/monitoreo.webp",
   },
 ];
 
@@ -101,7 +101,7 @@ export function CasosExperiencia() {
               <div className="flex flex-col gap-4 p-6 sm:p-8">
                 <div className="relative h-44 w-full overflow-hidden rounded-xl border border-white/10">
                   <Image
-                    src="/images/solutions/mineria.png"
+                    src="/images/solutions/mineria.webp"
                     alt="Tercer camino satelital para operaciones mineras (imagen ilustrativa)"
                     fill
                     className="object-cover"

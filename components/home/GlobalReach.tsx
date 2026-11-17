@@ -40,7 +40,7 @@ export function GlobalReach() {
 
           <div className="space-y-4">
             <ImagePlaceholder
-              src="/images/experience/satellite-connectivity.png"
+              src="/images/experience/satellite-connectivity.webp"
               alt="Conectividad satelital y alcance global"
               aspect="aspect-[16/10]"
               className="rounded-2xl border border-white/10"

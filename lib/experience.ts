@@ -50,7 +50,7 @@ export const experienceAreas: ExperienceArea[] = [
       "Equipamiento de comunicaciones y conectividad empresarial.",
     ],
     icon: RadioTower,
-    image: "/images/experience/telecom-infrastructure.png",
+    image: "/images/experience/telecom-infrastructure.webp",
     imageAlt: "Infraestructura de telecomunicaciones y redes",
   },
   {
@@ -64,7 +64,7 @@ export const experienceAreas: ExperienceArea[] = [
       "Coordinación técnica y documentación de proyectos.",
     ],
     icon: Factory,
-    image: "/images/experience/industry-mining.png",
+    image: "/images/experience/industry-mining.webp",
     imageAlt: "Infraestructura de telecomunicaciones en industria y minería",
   },
   {
@@ -79,7 +79,7 @@ export const experienceAreas: ExperienceArea[] = [
       "Procedimientos técnicos y seguimiento de implementación.",
     ],
     icon: ClipboardList,
-    image: "/images/experience/technical-planning.png",
+    image: "/images/experience/technical-planning.webp",
     imageAlt: "Planificación y gestión técnica de proyectos",
   },
   {
@@ -94,7 +94,7 @@ export const experienceAreas: ExperienceArea[] = [
       "Mantenimiento y continuidad operativa.",
     ],
     icon: Zap,
-    image: "/images/experience/critical-energy.png",
+    image: "/images/experience/critical-energy.webp",
     imageAlt: "Energía e infraestructura crítica",
   },
 ];

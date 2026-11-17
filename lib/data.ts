@@ -32,7 +32,7 @@ export const services: Service[] = [
       "Soporte técnico posterior.",
     ],
     applications: ["Casas", "Viviendas rurales", "Cabañas"],
-    image: "/images/solutions/hogar.png",
+    image: "/images/solutions/hogar.webp",
     icon: Home,
   },
   {
@@ -50,7 +50,7 @@ export const services: Service[] = [
       "Integración con tu red existente.",
     ],
     applications: ["Comercios", "Oficinas", "Depósitos"],
-    image: "/images/servicio-redes.png",
+    image: "/images/servicio-redes.webp",
     icon: Store,
   },
   {
@@ -68,7 +68,7 @@ export const services: Service[] = [
       "Infraestructura y soporte técnico.",
     ],
     applications: ["Minería", "Industria", "Ubicaciones remotas"],
-    image: "/images/solutions/mineria.png",
+    image: "/images/solutions/mineria.webp",
     icon: Factory,
   },
   {
@@ -87,7 +87,7 @@ export const services: Service[] = [
       "Soporte técnico.",
     ],
     applications: ["Minería", "Industria", "Operaciones críticas"],
-    image: "/images/solutions/alta-capacidad.png",
+    image: "/images/solutions/alta-capacidad.webp",
     icon: Layers,
     featured: true,
   },
@@ -106,7 +106,7 @@ export const services: Service[] = [
       "Instalación en techo (nunca en parabrisas).",
     ],
     applications: ["Flotas", "Embarcaciones", "Vehículos de campo"],
-    image: "/images/solutions/flotas.png",
+    image: "/images/solutions/flotas.webp",
     icon: Ship,
   },
 ];
@@ -154,7 +154,7 @@ export const solutions: Solution[] = [
     description:
       "Conectividad confiable para tu casa: internet satelital, Wi-Fi y redes internas bien instaladas.",
     items: ["Internet satelital Starlink", "Configuración de Wi-Fi", "Redes del hogar"],
-    image: "/images/solucion-hogares.png",
+    image: "/images/solucion-hogares.webp",
     icon: Home,
   },
   {
@@ -162,7 +162,7 @@ export const solutions: Solution[] = [
     description:
       "Redes estables y ordenadas para que tu negocio no dependa de conexiones improvisadas.",
     items: ["Redes LAN y cableado", "Puntos de acceso y cobertura", "Diagnóstico de conectividad"],
-    image: "/images/solucion-comercios.png",
+    image: "/images/solucion-comercios.webp",
     icon: Store,
   },
   {
@@ -170,7 +170,7 @@ export const solutions: Solution[] = [
     description:
       "Conectividad para huéspedes y gestión, incluso donde el servicio tradicional no llega.",
     items: ["Internet satelital", "Cobertura Wi-Fi por áreas", "Integración con la red del alojamiento"],
-    image: "/images/solucion-cabanas.png",
+    image: "/images/solucion-cabanas.webp",
     icon: BedDouble,
   },
   {
@@ -178,7 +178,7 @@ export const solutions: Solution[] = [
     description:
       "Internet satelital y redes para vivir conectado fuera del radio urbano.",
     items: ["Instalación Starlink", "Optimización de señal", "Redes para el hogar"],
-    image: "/images/solucion-vivienda-rural.png",
+    image: "/images/solucion-vivienda-rural.webp",
     icon: Trees,
   },
   {
@@ -186,7 +186,7 @@ export const solutions: Solution[] = [
     description:
       "Conectividad para campos, fincas y operaciones que necesitan enlace en zonas alejadas.",
     items: ["Relevamiento técnico", "Enlaces de conectividad", "Redes para la operación"],
-    image: "/images/solucion-productivo.png",
+    image: "/images/solucion-productivo.webp",
     icon: Warehouse,
   },
   {
@@ -198,7 +198,7 @@ export const solutions: Solution[] = [
       "Infraestructura de telecomunicaciones",
       "Asesoramiento y mantenimiento",
     ],
-    image: "/images/solucion-empresas.png",
+    image: "/images/solucion-empresas.webp",
     icon: Factory,
   },
 ];

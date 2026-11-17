@@ -58,7 +58,7 @@ export default function NosotrosPage() {
           <div className="space-y-6">
             <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-white/10">
               <Image
-                src="/images/nosotros.png"
+                src="/images/nosotros.webp"
                 alt="Técnico de NODO Telecom instalando equipos de conectividad en Salta"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"

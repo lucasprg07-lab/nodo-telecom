@@ -47,7 +47,7 @@ export function FlotasEmbarcaciones() {
           <article className="card h-full">
             <div className="relative h-48 w-full overflow-hidden rounded-xl bg-white/5">
               <Image
-                src="/images/solutions/flotas.png"
+                src="/images/solutions/flotas.webp"
                 alt="Flota de camiones con conectividad satelital en ruta"
                 fill
                 className="object-cover"
@@ -69,7 +69,7 @@ export function FlotasEmbarcaciones() {
           <article className="card h-full">
             <div className="relative h-48 w-full overflow-hidden rounded-xl bg-white/5">
               <Image
-                src="/images/solutions/embarcaciones.png"
+                src="/images/solutions/embarcaciones.webp"
                 alt="Embarcación con antena satelital instalada en cubierta"
                 fill
                 className="object-cover"
