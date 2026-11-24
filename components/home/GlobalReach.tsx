@@ -56,11 +56,6 @@ export function GlobalReach() {
                 de cobertura, condiciones regulatorias y disponibilidad
                 comercial.
               </p>
-              <p className="mt-2 text-slate-400">
-                NODO Telecom no es distribuidor oficial, representante autorizado
-                ni instalador oficial de Starlink, ni proveedor de internet ni
-                revendedor de planes.
-              </p>
             </div>
           </div>
         </div>

@@ -5,7 +5,17 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Diagram } from "@/components/ui/Diagram";
 import { CountUp } from "@/components/ui/CountUp";
 
-const casos = [
+type Caso = {
+  titulo: string;
+  zona: string;
+  situacion: string;
+  solucion: string;
+  resultado: string;
+  image: string;
+  alt?: string;
+};
+
+const casos: Caso[] = [
   {
     titulo: "Monitoreo remoto de un nodo VHF en un cerro",
     zona: "Zona remota",
@@ -13,7 +23,8 @@ const casos = [
       "Nodo VHF de una minera, sin conectividad a internet, imposible de monitorear a distancia.",
     solucion: "Starlink más un router que crea un túnel seguro hasta la empresa.",
     resultado: "El cliente pudo monitorear el nodo en forma remota.",
-    image: "/images/solutions/vhf.webp",
+    image: "/images/solutions/caso-nodo-vhf.webp",
+    alt: "Nodo VHF de comunicaciones en un cerro con conectividad satelital",
   },
   {
     titulo: "Repetidoras VHF integradas por internet (trunking)",
@@ -52,7 +63,7 @@ export function CasosExperiencia() {
         <SectionHeading
           eyebrow="Experiencia en proyectos reales"
           title="Casos de experiencia"
-          description="Proyectos realizados por el fundador de NODO durante su trayectoria profesional en telecomunicaciones."
+          description="Proyectos realizados por la gente detrás de NODO durante su trayectoria profesional en telecomunicaciones."
         />
         <p className="mx-auto mt-4 max-w-2xl text-center text-slate-400">
           Más de <CountUp to={5} prefix="+" suffix=" años" /> de experiencia
@@ -141,7 +152,7 @@ export function CasosExperiencia() {
                 <div className="relative h-40 w-full overflow-hidden rounded-xl bg-white/5">
                   <Image
                     src={caso.image}
-                    alt={`${caso.titulo} (imagen ilustrativa)`}
+                    alt={caso.alt ?? `${caso.titulo} (imagen ilustrativa)`}
                     fill
                     className="object-cover"
                     sizes="(min-width: 1024px) 33vw, 100vw"

@@ -43,9 +43,8 @@ export default function PresupuestoPage() {
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
               <h2 className="font-bold text-white">Importante</h2>
               <p className="mt-3 text-sm leading-relaxed text-slate-300">
-                NODO Telecom no es proveedor de internet ni revendedor de planes
-                Starlink. Vos mantenés tu propia suscripción y nosotros
-                realizamos el trabajo técnico.
+                NODO Telecom no es proveedor de internet. Vos mantenés tu propia
+                suscripción de Starlink y nosotros realizamos el trabajo técnico.
               </p>
             </div>
 

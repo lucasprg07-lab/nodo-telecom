@@ -1,11 +1,5 @@
+import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
-
-const pasos = [
-  "Te enviamos la propuesta y el monto final en USD.",
-  "Elegís stablecoin (USDC o USDT) y red de pago.",
-  "Recibís las instrucciones de pago y confirmás.",
-  "Verificamos la transacción y coordinamos el servicio.",
-];
 
 export function PagosCripto() {
   return (
@@ -36,19 +30,13 @@ export function PagosCripto() {
             </div>
           </div>
 
-          <div className="mt-10 grid gap-4 text-left md:grid-cols-4">
-            {pasos.map((p, i) => (
-              <div key={p} className="h-full rounded-xl border border-white/10 p-4">
-                <span className="font-mono text-sm text-cyan-400">0{i + 1}</span>
-                <p className="mt-2 text-sm text-slate-300">{p}</p>
-              </div>
-            ))}
-          </div>
-
-          <p className="mt-8 text-xs text-slate-500">
-            Siempre confirmá la red y la dirección con nosotros por un canal
-            oficial antes de enviar fondos. Una transferencia en la red
-            equivocada puede perderse.
+          <p className="mt-8 text-xs">
+            <Link
+              href="/faq#pago-cripto"
+              className="text-slate-400 underline underline-offset-2 transition hover:text-cyan-400"
+            >
+              Más información en preguntas frecuentes
+            </Link>
           </p>
         </div>
       </Reveal>

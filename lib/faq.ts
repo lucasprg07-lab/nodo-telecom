@@ -3,6 +3,7 @@ import { VISIT_PRICE } from "@/config/site";
 export interface FaqItem {
   question: string;
   answer: string;
+  id?: string;
 }
 
 export const faqItems: FaqItem[] = [
@@ -43,7 +44,7 @@ export const faqItems: FaqItem[] = [
   {
     question: "¿Qué diferencia hay con contratar Starlink directamente?",
     answer:
-      "Starlink es el proveedor del servicio y los equipos. NODO diseña e instala la solución a medida, con más de 5 años de experiencia profesional en telecomunicaciones. NODO no es distribuidor ni instalador oficial de Starlink.",
+      "Starlink es el proveedor del servicio y de los equipos. NODO diseña e instala la solución a medida, con más de 5 años de experiencia profesional en telecomunicaciones. NODO Telecom es una empresa independiente: no es distribuidor oficial, representante autorizado ni instalador oficial de Starlink, y no es proveedor de internet. El servicio lo presta y factura Starlink directamente al cliente.",
   },
   {
     question: "¿Qué es el servicio itinerante?",
@@ -68,5 +69,11 @@ export const faqItems: FaqItem[] = [
     question: "¿Qué es la alta capacidad satelital?",
     answer:
       "Es una solución que combina varios terminales Starlink en una sola conexión para sumar capacidad y tener redundancia. Se diseña a medida de cada operación y se cotiza como proyecto.",
+  },
+  {
+    id: "pago-cripto",
+    question: "¿Cómo pago en USDC o USDT?",
+    answer:
+      "Para clientes del exterior aceptamos stablecoins (USDC y USDT). El proceso es así: 1) Te enviamos la propuesta con el monto final en USD. 2) Elegís la stablecoin y la red de pago. 3) Recibís las instrucciones de pago y confirmás. 4) Verificamos la transacción y coordinamos el servicio. Importante: confirmá siempre la red y la dirección con nosotros por un canal oficial antes de enviar fondos; una transferencia en la red equivocada puede perderse.",
   },
 ];

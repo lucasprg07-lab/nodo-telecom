@@ -160,6 +160,13 @@ export function Footer() {
           </p>
           <p>Aviso de privacidad · {siteConfig.location}</p>
         </Container>
+        <Container className="pb-6">
+          <p className="text-[11px] leading-relaxed text-slate-500">
+            NODO Telecom es una empresa independiente y no es distribuidor
+            oficial de Starlink. Starlink es una marca de sus respectivos
+            titulares.
+          </p>
+        </Container>
       </div>
     </footer>
   );

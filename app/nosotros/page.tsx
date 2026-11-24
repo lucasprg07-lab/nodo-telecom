@@ -70,10 +70,10 @@ export default function NosotrosPage() {
                 Transparencia sobre el modelo Starlink
               </h2>
             <p className="mt-3 text-sm leading-relaxed text-slate-300">
-              NODO Telecom no es un proveedor de internet ni un revendedor de
-              planes Starlink. Vos contratás y mantenés tu propia suscripción de
-              Starlink; nosotros realizamos el trabajo técnico: relevamiento,
-              instalación, configuración, integración con tu red y soporte.
+              NODO Telecom no es un proveedor de internet. Vos contratás y
+              mantenés tu propia suscripción de Starlink; nosotros realizamos el
+              trabajo técnico: relevamiento, instalación, configuración,
+              integración con tu red y soporte.
             </p>
             </div>
           </div>
