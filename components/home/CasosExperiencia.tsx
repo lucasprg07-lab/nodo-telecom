@@ -113,7 +113,7 @@ export function CasosExperiencia() {
                 <div className="relative h-44 w-full overflow-hidden rounded-xl border border-white/10">
                   <Image
                     src="/images/solutions/mineria.webp"
-                    alt="Tercer camino satelital para operaciones mineras (imagen ilustrativa)"
+                    alt="Tercer camino satelital para operaciones mineras"
                     fill
                     className="object-cover"
                     sizes="(min-width: 1024px) 50vw, 100vw"
@@ -152,14 +152,11 @@ export function CasosExperiencia() {
                 <div className="relative h-40 w-full overflow-hidden rounded-xl bg-white/5">
                   <Image
                     src={caso.image}
-                    alt={caso.alt ?? `${caso.titulo} (imagen ilustrativa)`}
+                    alt={caso.alt ?? caso.titulo}
                     fill
                     className="object-cover"
                     sizes="(min-width: 1024px) 33vw, 100vw"
                   />
-                  <p className="absolute bottom-2 left-2 rounded bg-black/50 px-2 py-0.5 text-xs text-slate-200">
-                    Imagen ilustrativa
-                  </p>
                 </div>
                 <h3 className="mt-5 text-lg font-semibold text-white">
                   {caso.titulo}
