@@ -1,5 +1,3 @@
-import { VISIT_PRICE } from "@/config/site";
-
 export interface FaqItem {
   question: string;
   answer: string;
@@ -29,7 +27,8 @@ export const faqItems: FaqItem[] = [
   },
   {
     question: "¿Y si hay un problema después?",
-    answer: `Promoción de lanzamiento: soporte remoto gratis durante 3 meses para clientes nuevos. Las visitas técnicas tienen costo (desde ${VISIT_PRICE} en Salta Capital y zonas cercanas: Cerrillos, Valle de Lerma, Vaqueros, La Caldera). Fuera de esa zona se acuerda el valor antes de ir.`,
+    answer:
+      "Promoción de lanzamiento: soporte remoto gratis durante 3 meses para clientes nuevos. Las visitas técnicas presenciales tienen costo y se presupuestan previamente según la ubicación y el trabajo a realizar, acordando siempre el valor antes de asistir.",
   },
   {
     question: "¿Cómo se paga?",

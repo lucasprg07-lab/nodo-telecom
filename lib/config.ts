@@ -2,7 +2,6 @@ import {
   SITE_URL,
   CONTACT_EMAIL,
   WHATSAPP,
-  VISIT_PRICE,
   SHOW_TESTIMONIALS,
   SHOW_CASES,
   SHOW_GALLERY,
@@ -30,7 +29,6 @@ export const siteConfig = {
   // ---------------------------------------------------------------
   // Configuración de la web (ver /config/site.ts).
   // ---------------------------------------------------------------
-  visitPrice: VISIT_PRICE,
   showTestimonials: SHOW_TESTIMONIALS,
   showCases: SHOW_CASES,
   showGallery: SHOW_GALLERY,

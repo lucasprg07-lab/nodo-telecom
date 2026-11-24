@@ -11,7 +11,6 @@ Sos un desarrollador front-end senior. Trabajás sobre el sitio existente de NOD
 ### 1.0 Variables de configuración
 Crear `/config/site.ts` con constantes editables:
 - `SITE_URL` ("https://nodotele.com"), `CONTACT_EMAIL` (vacío por ahora; si está vacío, no mostrarlo), `WHATSAPP` (usar el actual).
-- `VISIT_PRICE` = "$30.000" (se muestra como "desde $30.000").
 - `SHOW_TESTIMONIALS = false`.
 - `SHOW_CASES = true`.
 
@@ -97,7 +96,7 @@ Sección con el componente de la sección 5, con este texto:
 2. **¿Cuánto tarda?** Instalaciones de hogar: en muchos casos el mismo día, según disponibilidad. Comercial, industria y minería: se hace un proyecto, se cotiza y se ejecuta con aprobación del cliente.
 3. **¿Quién provee el equipo?** En esta etapa, el cliente de hogar puede comprar su equipo Starlink y NODO lo instala. Para pymes, industria y minería, NODO lo provee o lo gestiona.
 4. **¿Qué necesita el lugar?** Vista despejada del cielo, sin árboles ni estructuras que obstruyan, en un lugar alto (techo). El campo de visión necesario depende del modelo; lo medimos en el sitio con la app de Starlink.
-5. **¿Y si hay un problema después?** Promoción de lanzamiento: soporte remoto gratis durante 3 meses para clientes nuevos. Las visitas técnicas tienen costo (desde `VISIT_PRICE` en Salta Capital y zonas cercanas: Cerrillos, Valle de Lerma, Vaqueros, La Caldera). Fuera de esa zona se acuerda el valor antes de ir.
+5. **¿Y si hay un problema después?** Promoción de lanzamiento: soporte remoto gratis durante 3 meses para clientes nuevos. Las visitas técnicas presenciales tienen costo y se presupuestan previamente según la ubicación y el trabajo a realizar, acordando siempre el valor antes de asistir.
 6. **¿Cómo se paga?** Transferencia, QR y tarjetas por Mercado Pago. Pago en cuotas solo con tarjeta. En efectivo, el 50% se abona antes para cubrir los equipos y el resto es mano de obra. Para clientes del exterior, también aceptamos stablecoins (USDC/USDT). Las instrucciones de pago se envían con la propuesta.
 7. **¿Trabajan fuera de Salta?** Sí. Viajamos físicamente: se cotiza el proyecto completo y se ejecuta con aprobación del cliente. Para clientes de otros países, el equipo y el plan de Starlink se contratan en el país del cliente y a su nombre, según la disponibilidad y las condiciones de cada país; NODO coordina el proyecto y la instalación.
 8. **¿Qué diferencia hay con contratar Starlink directamente?** Starlink es el proveedor del servicio y los equipos. NODO diseña e instala la solución a medida, con más de 5 años de experiencia profesional en telecomunicaciones. NODO no es distribuidor ni instalador oficial de Starlink.
