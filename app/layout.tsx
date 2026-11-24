@@ -28,7 +28,7 @@ const jetBrainsMono = JetBrains_Mono({
 const DEFAULT_TITLE =
   "NODO Telecom — Conectividad, redes e infraestructura tecnológica";
 const DEFAULT_DESCRIPTION =
-  "NODO Telecom integra soluciones de conectividad, redes e infraestructura tecnológica: instalación Starlink, redes LAN y Wi-Fi, cableado estructurado y conectividad industrial y rural, desde Salta, Argentina, con alcance nacional e internacional.";
+  "Internet satelital Starlink e infraestructura de redes en Salta: hogares, empresas, minería, flotas y embarcaciones. Instalación profesional y soporte.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),

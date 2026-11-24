@@ -13,7 +13,9 @@ export function CountUp({
   duration?: number;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const [value, setValue] = useState(0);
+  // Arranca con el valor final para que el HTML renderizado en el servidor
+  // (y el que se ve sin JavaScript) muestre el número real y no 0.
+  const [value, setValue] = useState(to);
 
   useEffect(() => {
     const el = ref.current;
@@ -23,6 +25,10 @@ export function CountUp({
       setValue(to);
       return;
     }
+
+    // Con JavaScript activo, la animación vuelve a arrancar desde 0
+    // y sube hasta el valor final al entrar en pantalla.
+    setValue(0);
 
     const io = new IntersectionObserver(([entry]) => {
       if (!entry.isIntersecting) return;

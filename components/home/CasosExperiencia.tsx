@@ -66,7 +66,7 @@ export function CasosExperiencia() {
           description="Proyectos realizados por la gente detrás de NODO durante su trayectoria profesional en telecomunicaciones."
         />
         <p className="mx-auto mt-4 max-w-2xl text-center text-slate-400">
-          Más de <CountUp to={5} prefix="+" suffix=" años" /> de experiencia
+          Más de <CountUp to={5} suffix=" años" /> de experiencia
           profesional en telecomunicaciones e infraestructura para empresas del
           sector.
         </p>

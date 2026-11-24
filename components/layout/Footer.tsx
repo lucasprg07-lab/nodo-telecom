@@ -158,7 +158,16 @@ export function Footer() {
           <p>
             © {year} {siteConfig.name}. Todos los derechos reservados.
           </p>
-          <p>Aviso de privacidad · {siteConfig.location}</p>
+          <p>
+            <Link
+              href="/privacidad"
+              className="transition hover:text-electric-400"
+            >
+              Aviso de privacidad
+            </Link>
+            {" · "}
+            {siteConfig.location}
+          </p>
         </Container>
         <Container className="pb-6">
           <p className="text-[11px] leading-relaxed text-slate-500">
