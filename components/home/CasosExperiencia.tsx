@@ -4,6 +4,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { NetworkDiagram } from "@/components/ui/NetworkDiagram";
 import { CountUp } from "@/components/ui/CountUp";
+import { Carousel } from "@/components/ui/Carousel";
 
 type Caso = {
   titulo: string;
@@ -18,7 +19,7 @@ type Caso = {
 const casos: Caso[] = [
   {
     titulo: "Monitoreo remoto de un nodo VHF en un cerro",
-    zona: "Zona remota",
+    zona: "Puna salteña",
     situacion:
       "Nodo VHF de una minera, sin conectividad a internet, imposible de monitorear a distancia.",
     solucion: "Starlink más un router que crea un túnel seguro hasta la empresa.",
@@ -28,7 +29,7 @@ const casos: Caso[] = [
   },
   {
     titulo: "Repetidoras VHF integradas por internet (trunking)",
-    zona: "Zonas remotas",
+    zona: "Puna salteña",
     situacion: "Repetidoras VHF aisladas en zonas remotas.",
     solucion:
       "Conectividad satelital en cada repetidora y enlace entre ellas a través de internet.",
@@ -58,7 +59,7 @@ const metodo = [
 
 export function CasosExperiencia() {
   return (
-    <section className="py-16 sm:py-24">
+    <section className="py-14 sm:py-24">
       <Container>
         <SectionHeading
           eyebrow="Experiencia en proyectos reales"
@@ -71,13 +72,13 @@ export function CasosExperiencia() {
           sector.
         </p>
         <Reveal>
-          <article className="mt-12 overflow-hidden rounded-2xl border border-cyan-400/20 bg-white/5">
-            <div className="grid lg:grid-cols-2">
-              <div className="p-6 sm:p-8">
-                <p className="text-xs uppercase tracking-widest text-cyan-400">
+          <article className="mt-8 rounded-2xl bg-gradient-to-br from-cyan-400/40 via-white/5 to-violet-500/40 p-px sm:mt-12">
+            <div className="grid overflow-hidden rounded-[calc(1rem-1px)] bg-[#0a1220] lg:grid-cols-2">
+              <div className="p-5 sm:p-8">
+                <p className="font-mono text-xs uppercase tracking-widest text-cyan-400">
                   Caso destacado
                 </p>
-                <h3 className="mt-2 text-xl font-semibold text-white">
+                <h3 className="mt-2 font-display text-xl font-semibold text-white">
                   Tercer camino satelital para operaciones mineras (Puna salteña)
                 </h3>
                 <dl className="mt-4 space-y-3 text-sm">
@@ -104,22 +105,14 @@ export function CasosExperiencia() {
                     </dd>
                   </div>
                 </dl>
-                <p className="mt-3 text-xs text-slate-400">
+                <p className="mt-3 font-mono text-xs text-slate-400">
                   Realizado en 3 proyectos similares.
                 </p>
               </div>
 
-              <div className="flex flex-col gap-4 p-6 sm:p-8">
-                <div className="relative h-44 w-full overflow-hidden rounded-xl border border-white/10">
-                  <Image
-                    src="/images/solutions/mineria.webp"
-                    alt="Tercer camino satelital para operaciones mineras"
-                    fill
-                    className="object-cover"
-                    sizes="(min-width: 1024px) 50vw, 100vw"
-                  />
-                </div>
+              <div className="flex flex-col gap-4 px-5 pb-5 sm:p-8">
                 <NetworkDiagram
+                  className="order-1 lg:order-2"
                   inputs={[
                     { label: "Radioenlace 1", kind: "radio" },
                     { label: "Radioenlace 2", kind: "radio" },
@@ -128,27 +121,44 @@ export function CasosExperiencia() {
                   outputLabel="Cliente"
                   ariaLabel="Dos radioenlaces y un enlace satelital convergen en un router y salen hacia el cliente"
                 />
+                <div className="relative order-2 h-36 w-full overflow-hidden rounded-xl border border-white/10 sm:h-44 lg:order-1">
+                  <Image
+                    src="/images/solutions/mineria.webp"
+                    alt="Tercer camino satelital para operaciones mineras"
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                  />
+                </div>
               </div>
             </div>
           </article>
         </Reveal>
-        <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {casos.map((caso, i) => (
-            <Reveal key={caso.titulo} delay={i * 75}>
-              <article className="card h-full">
-                <div className="relative h-40 w-full overflow-hidden rounded-xl bg-white/5">
+        <Reveal className="mt-6">
+          <Carousel
+            label="Casos de experiencia"
+            gridClassName="md:grid-cols-2 lg:grid-cols-3"
+          >
+            {casos.map((caso) => (
+              <article
+                key={caso.titulo}
+                className="card h-full w-[85%] shrink-0 snap-start sm:w-[60%] md:w-auto"
+              >
+                <div className="relative h-36 w-full overflow-hidden rounded-xl bg-white/5 sm:h-40">
                   <Image
                     src={caso.image}
                     alt={caso.alt ?? caso.titulo}
                     fill
                     className="object-cover"
-                    sizes="(min-width: 1024px) 33vw, 100vw"
+                    sizes="(min-width: 1024px) 33vw, 85vw"
                   />
                 </div>
                 <h3 className="mt-5 text-lg font-semibold text-white">
                   {caso.titulo}
                 </h3>
-                <p className="text-sm text-slate-400">Zona: {caso.zona}</p>
+                <p className="font-mono text-xs text-slate-400">
+                  Zona: {caso.zona}
+                </p>
                 <dl className="mt-3 space-y-2 text-sm">
                   <div>
                     <dt className="font-medium text-cyan-400">Situación</dt>
@@ -164,17 +174,22 @@ export function CasosExperiencia() {
                   </div>
                 </dl>
               </article>
-            </Reveal>
-          ))}
-        </div>
+            ))}
+          </Carousel>
+        </Reveal>
+
         <Reveal>
-          <div className="mt-12">
+          <div className="mt-10 sm:mt-12">
             <h3 className="text-xl font-semibold text-white">Método de trabajo</h3>
-            <ol className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+            <ol
+              tabIndex={0}
+              aria-label="Método de trabajo"
+              className="no-scrollbar -mx-4 mt-4 flex snap-x snap-mandatory gap-3 overflow-x-auto overscroll-x-contain scroll-px-4 px-4 pb-1 sm:-mx-6 sm:px-6 md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0 lg:grid-cols-5"
+            >
               {metodo.map((m, i) => (
                 <li
                   key={m}
-                  className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4"
+                  className="flex min-w-[11rem] shrink-0 snap-start items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 md:min-w-0"
                 >
                   <span className="font-mono text-sm text-cyan-400">0{i + 1}</span>
                   <span className="text-sm text-slate-300">{m}</span>
