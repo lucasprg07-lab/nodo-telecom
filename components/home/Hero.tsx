@@ -18,7 +18,7 @@ export function Hero() {
       <svg
         className="hero-orbit pointer-events-none absolute inset-x-0 top-0 -z-10 h-full w-full opacity-60"
         viewBox="0 0 800 400"
-        preserveAspectRatio="xMidYMid slice"
+        preserveAspectRatio="xMidYMin meet"
         aria-hidden="true"
       >
         <defs>

@@ -331,9 +331,6 @@ h3 {
   .hero-bg::before {
     animation: none;
   }
-  .hero-orbit .orbit-dot {
-    display: none;
-  }
 }
 
 /* ===== Hero: titular palabra por palabra (termina en ≤ 500 ms) ===== */
