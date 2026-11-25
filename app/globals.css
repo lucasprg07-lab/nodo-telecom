@@ -346,3 +346,10 @@ h3 {
   }
 }
 
+/* Órbita del hero: sin el punto animado si el usuario pide menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .hero-orbit .orbit-dot {
+    display: none;
+  }
+}
+
