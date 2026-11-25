@@ -6,14 +6,14 @@ type Variant = "primary" | "secondary" | "outline" | "ghost";
 type Size = "sm" | "md" | "lg";
 
 const baseStyles =
-  "inline-flex items-center justify-center gap-2 rounded-lg font-semibold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-60";
+  "inline-flex items-center justify-center gap-2 rounded-lg font-semibold transition-all duration-200 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-60";
 
 const variantStyles: Record<Variant, string> = {
   primary:
-    "bg-electric-500 text-navy-950 shadow-lg shadow-electric-500/20 hover:bg-electric-400 hover:shadow-electric-500/30",
+    "bg-gradient-to-r from-cyan-400 to-electric-500 text-navy-950 shadow-lg shadow-electric-500/20 hover:from-cyan-300 hover:to-electric-400 hover:shadow-electric-500/40",
   secondary: "bg-navy-800 text-white hover:bg-navy-700",
   outline: "border border-white/30 text-white hover:bg-white/10",
-  ghost: "text-navy-700 hover:bg-navy-50",
+  ghost: "text-cyan-300 hover:bg-white/5",
 };
 
 const sizeStyles: Record<Size, string> = {

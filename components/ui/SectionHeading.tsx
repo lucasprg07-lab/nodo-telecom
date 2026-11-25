@@ -22,10 +22,14 @@ export function SectionHeading({
     >
       {eyebrow ? (
         <p className="text-sm font-semibold uppercase tracking-widest text-cyan-400">
+          <span
+            className={cn("eyebrow-line", align === "center" && "hidden")}
+            aria-hidden="true"
+          />
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
+      <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-balance text-white sm:text-4xl">
         {title}
       </h2>
       {description ? (

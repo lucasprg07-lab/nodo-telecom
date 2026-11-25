@@ -194,3 +194,64 @@
   opacity: 1;
 }
 
+/* ===== Tokens de diseño ===== */
+:root {
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --radius-card: 16px;
+}
+
+/* Títulos balanceados y anclas con margen para el menú fijo */
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+[id] {
+  scroll-margin-top: 6rem;
+}
+
+/* Foco visible coherente */
+:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+/* Fondo de sección con resplandor sutil (usar en secciones destacadas) */
+.section-glow {
+  position: relative;
+  isolation: isolate;
+}
+.section-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(700px circle at 15% 0%, rgba(139, 92, 246, 0.1), transparent 60%),
+    radial-gradient(700px circle at 85% 100%, rgba(34, 211, 238, 0.08), transparent 60%);
+  pointer-events: none;
+}
+
+/* Tarjeta con borde luminoso al pasar el cursor (mejora de .card) */
+.card {
+  transition:
+    transform 0.35s var(--ease-out),
+    border-color 0.35s var(--ease-out),
+    box-shadow 0.35s var(--ease-out),
+    background-color 0.35s var(--ease-out);
+}
+.card:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* Línea decorativa para títulos de sección */
+.eyebrow-line {
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  margin-right: 10px;
+  vertical-align: middle;
+  background: var(--grad);
+  border-radius: 2px;
+}
+
