@@ -16,7 +16,7 @@ export function Hero() {
       <div className="hero-bg" aria-hidden="true" />
 
       <svg
-        className="hero-orbit pointer-events-none absolute inset-x-0 top-0 -z-10 h-full w-full opacity-60"
+        className="hero-orbit pointer-events-none absolute inset-x-0 top-0 -z-10 h-full w-full opacity-60 hidden sm:block"
         viewBox="0 0 800 400"
         preserveAspectRatio="xMidYMin meet"
         aria-hidden="true"
@@ -41,6 +41,36 @@ export function Hero() {
             <mpath href="#orbit" />
           </animateMotion>
         </circle>
+      </svg>
+
+      <svg
+        className="hero-orbit pointer-events-none absolute inset-x-0 top-0 -z-10 h-[300px] w-full opacity-90 sm:hidden"
+        viewBox="0 0 400 300"
+        preserveAspectRatio="xMidYMin meet"
+        aria-hidden="true"
+      >
+        <defs>
+          <linearGradient id="orbitGradM" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stopColor="#22d3ee" stopOpacity="0" />
+            <stop offset="50%" stopColor="#22d3ee" stopOpacity="0.9" />
+            <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0" />
+          </linearGradient>
+        </defs>
+        <path
+          id="orbitM"
+          d="M-10 240 Q 200 -50 410 240"
+          fill="none"
+          stroke="url(#orbitGradM)"
+          strokeWidth="1.8"
+          strokeDasharray="3 8"
+        />
+        <g className="orbit-dot">
+          <circle r="11" fill="#22d3ee" opacity="0.25" />
+          <circle r="5" fill="#22d3ee" />
+          <animateMotion dur="16s" repeatCount="indefinite">
+            <mpath href="#orbitM" />
+          </animateMotion>
+        </g>
       </svg>
 
       <Container className="relative grid gap-8 pb-12 pt-10 sm:gap-12 sm:py-20 lg:grid-cols-2 lg:items-center lg:py-24">
