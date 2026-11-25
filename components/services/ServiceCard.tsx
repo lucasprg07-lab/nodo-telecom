@@ -8,13 +8,13 @@ export function ServiceCard({ service }: { service: Service }) {
   return (
     <Link
       href={`/servicios#${service.slug}`}
-      className={`group flex h-full flex-col rounded-2xl border p-6 transition duration-300 hover:-translate-y-1 hover:shadow-lg ${
+      className={`group flex h-full flex-col rounded-2xl border p-6 transition duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(34,211,238,0.12)] ${
         service.featured
-          ? "border-cyan-400/40 bg-cyan-400/5 hover:border-cyan-300 hover:shadow-cyan-500/10"
+          ? "border-cyan-400/40 bg-cyan-400/5 hover:border-cyan-300"
           : "border-white/10 bg-white/5 hover:border-cyan-400/40"
       }`}
     >
-      <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-400/10 text-cyan-400">
+      <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-400/10 text-cyan-400 transition duration-300 group-hover:scale-110 group-hover:bg-cyan-400/20">
         <Icon className="h-6 w-6" />
       </div>
       <h3 className="mt-4 text-lg font-semibold text-white transition group-hover:text-cyan-300">

@@ -47,6 +47,7 @@ export function FaqAccordion({ items }: { items: FaqItem[] }) {
               onClick={() => setOpen(isOpen ? null : i)}
               className="flex w-full items-center justify-between gap-4 p-4 text-left"
               aria-expanded={isOpen}
+              aria-controls={`faq-${i}`}
             >
               <span className="font-medium text-white">{item.question}</span>
               <ChevronDown
@@ -56,9 +57,17 @@ export function FaqAccordion({ items }: { items: FaqItem[] }) {
                 )}
               />
             </button>
-            {isOpen ? (
-              <p className="px-4 pb-4 text-sm text-slate-300">{item.answer}</p>
-            ) : null}
+            <div
+              id={`faq-${i}`}
+              className={cn(
+                "grid transition-[grid-template-rows] duration-300 ease-out",
+                isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+              )}
+            >
+              <div className="overflow-hidden" inert={!isOpen}>
+                <p className="px-4 pb-4 text-sm text-slate-300">{item.answer}</p>
+              </div>
+            </div>
           </div>
         );
       })}
