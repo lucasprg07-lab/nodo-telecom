@@ -6,6 +6,7 @@ import { siteConfig } from "@/lib/config";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
+import { MobileCtaBar } from "@/components/layout/MobileCtaBar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -140,7 +141,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Navbar />
         <main id="contenido">{children}</main>
         <Footer />
+        <div className="h-20 lg:hidden" aria-hidden="true" />
         <WhatsAppButton />
+        <MobileCtaBar />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -1,18 +1,39 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { siteConfig } from "@/lib/config";
+import { cn } from "@/lib/utils";
 import { Logo } from "@/components/ui/Logo";
 import { Button } from "@/components/ui/Button";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#070d17]/80 backdrop-blur-md">
-      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <header
+      className={cn(
+        "sticky top-0 z-50 border-b border-white/10 backdrop-blur-md transition-all duration-300",
+        scrolled
+          ? "bg-[#070d17]/90 shadow-[0_8px_30px_rgba(0,0,0,0.35)]"
+          : "bg-[#070d17]/60"
+      )}
+    >
+      <nav
+        className={cn(
+          "mx-auto flex max-w-6xl items-center justify-between px-4 transition-all duration-300 sm:px-6 lg:px-8",
+          scrolled ? "h-14" : "h-16"
+        )}
+      >
         <Link href="/" className="shrink-0" aria-label="NODO Telecom — Inicio">
           <Logo inverted />
         </Link>
@@ -28,6 +49,8 @@ export function Navbar() {
             </Link>
           ))}
         </div>
+
+        {/* Espacio reservado para el selector de idioma ES/EN (futuro) */}
 
         <div className="hidden lg:block">
           <Button href="/presupuesto" size="sm">
@@ -71,6 +94,8 @@ export function Navbar() {
           </div>
         </div>
       ) : null}
+
+      <div className="scroll-progress" aria-hidden="true" />
     </header>
   );
 }

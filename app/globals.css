@@ -323,3 +323,26 @@ h3 {
   border-radius: 2px;
 }
 
+/* Barra de progreso de lectura (solo navegadores con animation-timeline) */
+.scroll-progress {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 2px;
+  width: 100%;
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  background: var(--grad);
+}
+@supports (animation-timeline: scroll()) {
+  .scroll-progress {
+    animation: scroll-progress linear both;
+    animation-timeline: scroll(root);
+  }
+  @keyframes scroll-progress {
+    to {
+      transform: scaleX(1);
+    }
+  }
+}
+
