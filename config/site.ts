@@ -21,3 +21,8 @@ export const SHOW_CASES = true;
 // Sección de galería de instalaciones: oculta hasta que haya fotos reales
 // cargadas en /public/images/galeria/. Poner true para mostrarla.
 export const SHOW_GALLERY = false;
+
+// Redes sociales de NODO Telecom. Si una está vacía, su ícono no se muestra.
+export const INSTAGRAM_URL = "https://www.instagram.com/nodotele.comsla";
+export const FACEBOOK_URL =
+  "https://www.facebook.com/profile.php?id=61596768836791";

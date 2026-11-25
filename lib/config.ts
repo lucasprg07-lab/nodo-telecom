@@ -5,6 +5,8 @@ import {
   SHOW_TESTIMONIALS,
   SHOW_CASES,
   SHOW_GALLERY,
+  INSTAGRAM_URL,
+  FACEBOOK_URL,
 } from "@/config/site";
 
 export const siteConfig = {
@@ -41,8 +43,8 @@ export const siteConfig = {
   // Redes sociales — vacías por defecto. Solo se muestran si están configuradas.
   // ---------------------------------------------------------------
   social: {
-    facebook: "",
-    instagram: "",
+    facebook: FACEBOOK_URL,
+    instagram: INSTAGRAM_URL,
     linkedin: "",
   },
 

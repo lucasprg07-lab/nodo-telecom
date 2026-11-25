@@ -1,38 +1,12 @@
 import Link from "next/link";
-import { Facebook, Instagram, Linkedin, MapPin } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { siteConfig } from "@/lib/config";
 import { services } from "@/lib/data";
 import { buildWhatsAppLink } from "@/lib/utils";
 import { Logo } from "@/components/ui/Logo";
 import { Container } from "@/components/ui/Container";
 import { WhatsAppIcon } from "@/components/ui/icons";
-
-const socialItems: {
-  key: keyof typeof siteConfig.social;
-  label: string;
-  href: string;
-  icon: LucideIcon;
-}[] = [
-  {
-    key: "facebook",
-    label: "Facebook",
-    href: siteConfig.social.facebook,
-    icon: Facebook,
-  },
-  {
-    key: "instagram",
-    label: "Instagram",
-    href: siteConfig.social.instagram,
-    icon: Instagram,
-  },
-  {
-    key: "linkedin",
-    label: "LinkedIn",
-    href: siteConfig.social.linkedin,
-    icon: Linkedin,
-  },
-];
+import { SocialLinks } from "@/components/ui/SocialLinks";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -128,27 +102,7 @@ export function Footer() {
               ) : null}
             </ul>
 
-            {socialItems.some((item) => item.href) ? (
-              <div className="mt-5 flex gap-3">
-                {socialItems
-                  .filter((item) => item.href)
-                  .map((item) => {
-                    const Icon = item.icon;
-                    return (
-                      <a
-                        key={item.key}
-                        href={item.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={item.label}
-                        className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/5 text-slate-300 transition hover:bg-white/10 hover:text-electric-400"
-                      >
-                        <Icon className="h-4 w-4" />
-                      </a>
-                    );
-                  })}
-              </div>
-            ) : null}
+            <SocialLinks className="mt-5" />
           </div>
         </div>
       </Container>

@@ -114,6 +114,9 @@ const jsonLd = {
         addressRegion: "Salta",
         addressCountry: "AR",
       },
+      sameAs: [siteConfig.social.instagram, siteConfig.social.facebook].filter(
+        Boolean,
+      ),
     },
     {
       "@type": "Service",

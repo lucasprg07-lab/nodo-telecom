@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { WhatsAppIcon } from "@/components/ui/icons";
+import { SocialLinks } from "@/components/ui/SocialLinks";
 
 export const metadata: Metadata = {
   title: "Contacto",
@@ -76,6 +77,13 @@ export default function ContactoPage() {
                 <p className="text-sm text-slate-400">{siteConfig.location}</p>
               </div>
             </div>
+
+            {siteConfig.social.instagram || siteConfig.social.facebook ? (
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                <p className="font-semibold text-white">Seguinos en redes</p>
+                <SocialLinks className="mt-3" />
+              </div>
+            ) : null}
           </div>
 
           <div className="rounded-2xl border border-white/10 bg-white/5 p-8">

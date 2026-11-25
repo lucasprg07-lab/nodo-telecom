@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { WhatsAppIcon } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/Reveal";
+import { SocialLinks } from "@/components/ui/SocialLinks";
 
 export function CallToAction() {
   return (
@@ -31,6 +32,8 @@ export function CallToAction() {
             Escribinos por WhatsApp
           </Button>
         </div>
+        <p className="mt-8 text-sm text-slate-400">Seguinos en redes</p>
+        <SocialLinks className="mt-3 justify-center" />
       </Container>
       </Reveal>
     </section>
