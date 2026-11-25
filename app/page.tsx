@@ -1,38 +1,31 @@
 import { Hero } from "@/components/home/Hero";
 import { TrustStrip } from "@/components/home/TrustStrip";
 import { ServicesPreview } from "@/components/home/ServicesPreview";
-import { FlotasEmbarcaciones } from "@/components/home/FlotasEmbarcaciones";
-import { AltaCapacidad } from "@/components/home/AltaCapacidad";
-import { ComoTrabajamos } from "@/components/home/ComoTrabajamos";
-import { ExperienceAreas } from "@/components/home/ExperienceAreas";
 import { CasosExperiencia } from "@/components/home/CasosExperiencia";
-import { Benefits } from "@/components/home/Benefits";
-import { Differentiator } from "@/components/home/Differentiator";
-import { GlobalReach } from "@/components/home/GlobalReach";
-import { Galeria } from "@/components/home/Galeria";
-import { PagosCripto } from "@/components/home/PagosCripto";
-import { FAQSection } from "@/components/home/FAQSection";
-import { Testimonios } from "@/components/home/Testimonios";
+import { PorQueNodo } from "@/components/home/PorQueNodo";
+import { AltaCapacidad } from "@/components/home/AltaCapacidad";
 import { CallToAction } from "@/components/home/CallToAction";
+import { SectionDivider } from "@/components/ui/SectionDivider";
 
 export default function HomePage() {
   return (
     <>
+      {/* Bloque 1 — impacto: propuesta, confianza y servicios */}
       <Hero />
       <TrustStrip />
       <ServicesPreview />
-      <FlotasEmbarcaciones />
-      <AltaCapacidad />
-      <ComoTrabajamos />
-      <ExperienceAreas />
+      <SectionDivider />
+
+      {/* Bloque 2 — pruebas: casos reales y capacidad */}
       <CasosExperiencia />
-      <Benefits />
-      <Differentiator />
-      <GlobalReach />
-      <Galeria />
-      <PagosCripto />
-      <FAQSection />
-      <Testimonios />
+      <AltaCapacidad />
+      <SectionDivider />
+
+      {/* Bloque 3 — por qué NODO: beneficios, enfoque y proceso */}
+      <PorQueNodo />
+      <SectionDivider />
+
+      {/* Bloque 4 — cierre: llamado a la acción */}
       <CallToAction />
     </>
   );
