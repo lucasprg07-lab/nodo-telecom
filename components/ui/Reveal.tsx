@@ -1,62 +1,71 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import type { ReactNode } from "react";
+import { useEffect, useRef } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import { useInView } from "@/components/ui/useInView";
+
+type From = "up" | "down" | "left" | "right" | "scale";
 
 interface RevealProps {
   children: ReactNode;
   className?: string;
+  /** Retraso en ms (para escalonar tarjetas). */
   delay?: number;
+  /** Dirección de entrada. */
+  from?: From;
+  /** Si es true, anima solo la primera vez (usar en bloques muy altos). */
+  once?: boolean;
+}
+
+function reducedMotion() {
+  return (
+    typeof window !== "undefined" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  );
 }
 
 /**
- * Envuelve contenido y lo revela con un fade-up sutil cuando entra en pantalla.
- * Respeta `prefers-reduced-motion` y no oculta contenido en el HTML inicial.
+ * Revela el contenido con fade + desplazamiento al entrar en pantalla.
+ * Vuelve a animar cuando el bloque reaparece (al subir y al bajar).
+ * Sin JavaScript, o con movimiento reducido, el contenido se ve siempre.
  */
-export function Reveal({ children, className, delay = 0 }: RevealProps) {
+export function Reveal({
+  children,
+  className,
+  delay = 0,
+  from = "up",
+  once = false,
+}: RevealProps) {
   const ref = useRef<HTMLDivElement | null>(null);
-  const [mounted, setMounted] = useState(false);
-  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-
-    const node = ref.current;
-    if (!node) return;
-
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setVisible(true);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setVisible(true);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -48px 0px" }
-    );
-
-    observer.observe(node);
-    return () => observer.disconnect();
+    const el = ref.current;
+    if (!el) return;
+    el.dataset.js = "1";
+    if (reducedMotion()) el.dataset.in = "1";
   }, []);
 
-  const hidden = mounted && !visible;
+  useInView(ref, (inView) => {
+    const el = ref.current;
+    if (!el) return;
+    if (inView || reducedMotion()) {
+      el.dataset.in = "1";
+    } else if (!once) {
+      el.dataset.in = "0";
+    }
+  });
 
   return (
     <div
       ref={ref}
-      className={cn(
-        "transition-all duration-700 ease-out",
-        hidden ? "translate-y-6 opacity-0" : "translate-y-0 opacity-100",
-        className
-      )}
-      style={delay ? { transitionDelay: `${delay}ms` } : undefined}
+      data-from={from}
+      className={cn("reveal", className)}
+      style={
+        delay
+          ? ({ ["--reveal-delay" as string]: `${delay}ms` } as CSSProperties)
+          : undefined
+      }
     >
       {children}
     </div>
