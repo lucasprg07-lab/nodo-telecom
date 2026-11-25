@@ -334,19 +334,6 @@ h3 {
   .hero-orbit .orbit-dot {
     display: none;
   }
-  .diagram-wrap[data-visible="true"] .flow {
-    stroke-dashoffset: 0;
-    animation: flow-fade 1.6s ease-in-out infinite;
-  }
-}
-@keyframes flow-fade {
-  0%,
-  100% {
-    opacity: 0.35;
-  }
-  50% {
-    opacity: 1;
-  }
 }
 
 /* ===== Hero: titular palabra por palabra (termina en ≤ 500 ms) ===== */
