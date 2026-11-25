@@ -10,7 +10,7 @@ const baseStyles =
 
 const variantStyles: Record<Variant, string> = {
   primary:
-    "bg-gradient-to-r from-cyan-400 to-electric-500 text-navy-950 shadow-lg shadow-electric-500/20 hover:from-cyan-300 hover:to-electric-400 hover:shadow-electric-500/40",
+    "bg-gradient-to-r from-cyan-400 to-violet-400 text-navy-950 shadow-lg shadow-cyan-500/20 hover:brightness-110 hover:shadow-violet-500/30",
   secondary: "bg-navy-800 text-white hover:bg-navy-700",
   outline: "border border-white/30 text-white hover:bg-white/10",
   ghost: "text-cyan-300 hover:bg-white/5",

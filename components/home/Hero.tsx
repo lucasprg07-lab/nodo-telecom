@@ -1,3 +1,5 @@
+import { Fragment } from "react";
+import type { CSSProperties } from "react";
 import Image from "next/image";
 import { MapPin, ArrowRight, ShieldCheck, Satellite } from "lucide-react";
 import { siteConfig } from "@/lib/config";
@@ -6,9 +8,11 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { WhatsAppIcon } from "@/components/ui/icons";
 
+const titularInicio = ["Conectividad", "satelital", "y", "redes", "para"];
+
 export function Hero() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="grain relative overflow-hidden">
       <div className="hero-bg" aria-hidden="true" />
 
       <svg
@@ -39,22 +43,37 @@ export function Hero() {
         </circle>
       </svg>
 
-      <Container className="relative grid gap-12 py-16 sm:py-20 lg:grid-cols-2 lg:items-center lg:py-24">
-        <div className="animate-fade-up">
-          <span className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyan-300">
+      <Container className="relative grid gap-8 pb-12 pt-10 sm:gap-12 sm:py-20 lg:grid-cols-2 lg:items-center lg:py-24">
+        <div>
+          <span className="inline-flex animate-fade-up items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyan-300">
             <MapPin className="h-3.5 w-3.5" /> Base en Salta, Argentina
           </span>
-          <h1 className="mt-6 font-display text-4xl font-bold leading-tight tracking-tight text-white text-balance sm:text-5xl">
-            Conectividad satelital y redes para{" "}
+          <h1 className="mt-5 font-display text-[2rem] font-bold leading-[1.15] tracking-tight text-white text-balance sm:mt-6 sm:text-5xl sm:leading-tight">
+            {titularInicio.map((palabra, i) => (
+              <Fragment key={palabra}>
+                <span
+                  className="hero-word"
+                  style={{ ["--i" as string]: i } as CSSProperties}
+                >
+                  {palabra}
+                </span>{" "}
+              </Fragment>
+            ))}
             <span className="grad-text">
               hogares, empresas, minería, flotas y embarcaciones
             </span>
           </h1>
-          <p className="mt-5 max-w-xl text-lg text-slate-300">
+          <p
+            className="mt-4 max-w-xl animate-fade-up text-base text-slate-300 sm:mt-5 sm:text-lg"
+            style={{ animationDelay: "120ms" }}
+          >
             Base en Salta, servicio en toda Argentina y coordinación
             internacional según disponibilidad.
           </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div
+            className="mt-7 flex animate-fade-up flex-col gap-3 sm:mt-8 sm:flex-row"
+            style={{ animationDelay: "180ms" }}
+          >
             <Button
               href={buildWhatsAppLink(siteConfig.whatsappDefaultMessage)}
               external
@@ -68,16 +87,16 @@ export function Hero() {
               <ArrowRight className="h-4 w-4" />
             </Button>
           </div>
-          <p className="mt-8 flex items-center gap-2 text-sm text-slate-400">
-            <ShieldCheck className="h-4 w-4 text-cyan-400" />
+          <p
+            className="mt-6 flex animate-fade-up items-center gap-2 text-xs text-slate-400 sm:mt-8 sm:text-sm"
+            style={{ animationDelay: "240ms" }}
+          >
+            <ShieldCheck className="h-4 w-4 shrink-0 text-cyan-400" />
             Instalación profesional · Integración de redes · Soporte técnico
           </p>
         </div>
 
-        <div
-          className="relative animate-fade-up"
-          style={{ animationDelay: "150ms" }}
-        >
+        <div className="relative">
           <div className="rounded-3xl bg-gradient-to-br from-cyan-400/50 via-white/10 to-violet-500/50 p-px shadow-[0_0_60px_rgba(34,211,238,0.12)]">
             <div className="relative aspect-[16/9] overflow-hidden rounded-[calc(1.5rem-1px)] bg-navy-950">
               <Image
