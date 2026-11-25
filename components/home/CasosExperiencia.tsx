@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
-import { Diagram } from "@/components/ui/Diagram";
+import { NetworkDiagram } from "@/components/ui/NetworkDiagram";
 import { CountUp } from "@/components/ui/CountUp";
 
 type Caso = {
@@ -119,28 +119,15 @@ export function CasosExperiencia() {
                     sizes="(min-width: 1024px) 50vw, 100vw"
                   />
                 </div>
-                <Diagram>
-                  <svg
-                    viewBox="0 0 400 200"
-                    className="diagram w-full"
-                    role="img"
-                    aria-label="Dos radioenlaces y un enlace satelital convergen en un router y salen hacia el cliente"
-                  >
-                    <circle className="seg" cx="40" cy="70" r="5" fill="#8b5cf6" style={{ transitionDelay: "0.1s" }} />
-                    <circle className="seg" cx="40" cy="130" r="5" fill="#8b5cf6" style={{ transitionDelay: "0.15s" }} />
-                    <circle className="seg" cx="200" cy="30" r="6" fill="#22d3ee" style={{ transitionDelay: "0.2s" }} />
-                    <path className="seg" d="M188 34 a16 16 0 0 1 24 0" stroke="#22d3ee" fill="none" strokeWidth="1.5" style={{ transitionDelay: "0.2s" }} />
-                    <rect className="seg" x="185" y="90" width="40" height="30" rx="6" fill="none" stroke="#22d3ee" strokeWidth="1.5" style={{ transitionDelay: "0.5s" }} />
-                    <line className="seg" x1="45" y1="70" x2="185" y2="105" stroke="#8b5cf6" strokeWidth="1.5" style={{ transitionDelay: "0.3s" }} />
-                    <line className="seg" x1="45" y1="130" x2="185" y2="105" stroke="#8b5cf6" strokeWidth="1.5" style={{ transitionDelay: "0.35s" }} />
-                    <line className="seg" x1="200" y1="48" x2="205" y2="90" stroke="#22d3ee" strokeWidth="1.5" style={{ transitionDelay: "0.4s" }} />
-                    <line className="seg" x1="225" y1="105" x2="320" y2="105" stroke="#22d3ee" strokeWidth="1.5" style={{ transitionDelay: "0.6s" }} />
-                    <rect className="seg" x="320" y="85" width="70" height="40" rx="8" fill="none" stroke="#8b5cf6" strokeWidth="1.5" style={{ transitionDelay: "0.7s" }} />
-                    <text className="seg" x="355" y="109" fill="#e8eef7" fontSize="11" textAnchor="middle" style={{ transitionDelay: "0.7s" }}>
-                      Cliente
-                    </text>
-                  </svg>
-                </Diagram>
+                <NetworkDiagram
+                  inputs={[
+                    { label: "Radioenlace 1", kind: "radio" },
+                    { label: "Radioenlace 2", kind: "radio" },
+                    { label: "Satélite (Starlink)", kind: "sat" },
+                  ]}
+                  outputLabel="Cliente"
+                  ariaLabel="Dos radioenlaces y un enlace satelital convergen en un router y salen hacia el cliente"
+                />
               </div>
             </div>
           </article>

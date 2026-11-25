@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
-import { Diagram } from "@/components/ui/Diagram";
+import { NetworkDiagram } from "@/components/ui/NetworkDiagram";
 
 const beneficios = [
   { titulo: "Mayor capacidad", desc: "Se suma la capacidad de los enlaces." },
@@ -94,30 +94,19 @@ export function AltaCapacidad() {
               </p>
             </div>
 
-            <Diagram className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-4">
-              <svg
-                viewBox="0 0 400 180"
-                className="diagram w-full"
-                role="img"
-                aria-label="Varios terminales satelitales convergen en un router central y salen hacia la operación"
-              >
-                <circle className="seg" cx="50" cy="40" r="4" fill="#22d3ee" style={{ transitionDelay: "0.1s" }} />
-                <path className="seg" d="M40 52 a12 12 0 0 1 20 0" stroke="#22d3ee" fill="none" strokeWidth="1.5" style={{ transitionDelay: "0.1s" }} />
-                <circle className="seg" cx="50" cy="90" r="4" fill="#22d3ee" style={{ transitionDelay: "0.2s" }} />
-                <path className="seg" d="M40 102 a12 12 0 0 1 20 0" stroke="#22d3ee" fill="none" strokeWidth="1.5" style={{ transitionDelay: "0.2s" }} />
-                <circle className="seg" cx="50" cy="140" r="4" fill="#22d3ee" style={{ transitionDelay: "0.3s" }} />
-                <path className="seg" d="M40 152 a12 12 0 0 1 20 0" stroke="#22d3ee" fill="none" strokeWidth="1.5" style={{ transitionDelay: "0.3s" }} />
-                <line className="seg" x1="74" y1="40" x2="185" y2="90" stroke="#8b5cf6" strokeWidth="1.5" style={{ transitionDelay: "0.35s" }} />
-                <line className="seg" x1="74" y1="90" x2="185" y2="90" stroke="#8b5cf6" strokeWidth="1.5" style={{ transitionDelay: "0.45s" }} />
-                <line className="seg" x1="74" y1="140" x2="185" y2="90" stroke="#8b5cf6" strokeWidth="1.5" style={{ transitionDelay: "0.55s" }} />
-                <rect className="seg" x="185" y="76" width="40" height="28" rx="6" fill="none" stroke="#22d3ee" strokeWidth="1.5" style={{ transitionDelay: "0.6s" }} />
-                <line className="seg" x1="225" y1="90" x2="320" y2="90" stroke="#22d3ee" strokeWidth="1.5" style={{ transitionDelay: "0.7s" }} />
-                <rect className="seg" x="320" y="70" width="70" height="40" rx="8" fill="none" stroke="#8b5cf6" strokeWidth="1.5" style={{ transitionDelay: "0.8s" }} />
-                <text className="seg" x="355" y="94" fill="#e8eef7" fontSize="11" textAnchor="middle" style={{ transitionDelay: "0.8s" }}>
-                  Operación
-                </text>
-              </svg>
-            </Diagram>
+            <NetworkDiagram
+              className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-4"
+              inputs={[
+                { label: "Starlink 1", kind: "sat" },
+                { label: "Starlink 2", kind: "sat" },
+                { label: "Starlink 3", kind: "sat" },
+                { label: "Starlink 4", kind: "sat" },
+                { label: "Starlink 5", kind: "sat" },
+                { label: "Starlink 6", kind: "sat" },
+              ]}
+              outputLabel="Operación"
+              ariaLabel="Varios terminales satelitales convergen en un router central y salen hacia la operación"
+            />
           </Reveal>
         </div>
       </Container>
